@@ -61,7 +61,53 @@ var success = function (api) {
       api.stop();
     });
 
+    document.getElementById('focus').addEventListener('click', function () {
+      api.setCameraLookAt([0, -7.413438214244611, 0.3106502245956986], [-2.022618784987591, -0.43206851384109185, 1.0124867100509538], 2, function(err) {
+        if (!err) {
+          window.console.log('Camera moved');
+        }
+      });
+    });
 
+    document.getElementById('setCameraConstraints').addEventListener('click', function () {
+      api.setEnableCameraConstraints(true, function () {
+        console.log('cam constraints enabled');
+        api.setCameraConstraints({
+          down: 1,
+          fov: 1,
+          left: 1,
+          nearFarRatio: 0.005,
+          position: [-9.211534864074402, -7.413438214244611, 0.3106502245956986],
+          right: 0.8567979964335799,
+          target: [-2.022618784987591, -0.43206851384109185, 1.0124867100509538],
+          up: 0.5,
+          useCameraConstraints: true,
+          usePanConstraints: true,
+          usePitchConstraints: false,
+          useYawConstraints: true,
+          useZoomConstraints: true,
+          zoomIn: 100,
+          zoomOut: 2233.451310789853
+        }, function (err) {
+          console.log(err);
+          console.log('cam constraints set');
+        });
+      });
+    })
+
+    document.getElementById('noSetCameraConstraints').addEventListener('click', function () {
+      api.setEnableCameraConstraints(false, function () {
+        console.log('cam constraints not enabled');
+      });
+    })
+
+    document.getElementById('zoom').addEventListener('click', function () {
+      api.setCameraLookAt([-5.211534864074402, -3.413438214244611, 0.3106502245956986], [0.0000036954879760742188, -0.40043526577064215, 1.1827186105846617], 2, function(err) {
+        if (!err) {
+          window.console.log('Camera moved');
+        }
+      });
+    });
 
     document.getElementById('screenshot').addEventListener('click', function () {
       api.getScreenShot(800, 800, 'image/png', function (err, result) {
