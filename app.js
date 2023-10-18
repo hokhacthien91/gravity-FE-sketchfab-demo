@@ -1,23 +1,35 @@
 // Sketchfab Viewer API: Start/Stop the viewer
 var version = "1.12.1";
 // var uid = "784e95f4f22545199be7e165af6437f8";
-var uid = "1e1a45d87dbf451eaa5149335d7f826e";
-
-var urlParams = new URLSearchParams(window.location.search);
-var autoSpin = 0.0;
-console.log("URL Params: " + urlParams);
-
-if (urlParams.has("autospin")) {
-  autoSpin = urlParams.get("autospin");
-}
-console.log("autoSpin: " + autoSpin);
-if (urlParams.has("id")) {
-  uid = urlParams.get("id");
-}
-
 var iframe = document.getElementById("api-frame");
-var client = new window.Sketchfab(version, iframe);
+var idAttributeValue = iframe.getAttribute("data-uid");
+var uid = idAttributeValue
 
+// var urlParams = new URLSearchParams(window.location.search);
+var autoSpin = 0.0;
+// console.log("URL Params: " + urlParams);
+
+// if (urlParams.has("autospin")) {
+//   autoSpin = urlParams.get("autospin");
+// }
+// console.log("autoSpin: " + autoSpin);
+// if (urlParams.has("id")) {
+//   uid = urlParams.get("id");
+// }
+
+
+var client = new window.Sketchfab(version, iframe);
+var canvas = document.createElement('canvas');
+var ctx = canvas.getContext('2d');
+canvas.width = 2;
+canvas.height = 2;
+var myMaterials;
+var getColorAsTextureURL = function getColorAsTextureURL(color) {
+  ctx.fillStyle = color;
+  ctx.fillRect(0, 0, 2, 2);
+  return canvas.toDataURL('image/png', 1.0);
+};
+var blackTextureURL = getColorAsTextureURL('black');
 var error = function () {
   console.error("Sketchfab API error");
 };
@@ -52,6 +64,28 @@ var success = function (api) {
   api.addEventListener('viewerstop', function () {
     console.log('viewerstop');
   });
+  function makeMyModelTextured(enabled) {
+    for (var i = 0; i < myMaterials.length; i++) {
+      var m = myMaterials[i];
+      console.log(m.name, m);
+      // m.channels.AlbedoPBR.enable = true;
+      // if (enabled) {
+      //   console.log(textures[m.name]);
+      //   m.channels.AlbedoPBR.texture = textures[m.name];
+      //   m.channels.AlbedoPBR.color = false;
+  
+      //   //api.updateTexture(url, m.channels.AlbedoPBR.texture.uid,
+      //   // function(  ) {
+      //   //   api.setMaterial(m);
+      //   //}
+      //   //);
+      // } else {
+      //   m.channels.AlbedoPBR.texture = false;
+      //   m.channels.AlbedoPBR.color = [1, 0, 0, 0];
+      // }
+      api.setMaterial(m);
+    }
+  }
   api.start(function () {
     window.console.log('Viewer started');
     document.getElementById('start').addEventListener('click', function () {
@@ -62,7 +96,7 @@ var success = function (api) {
     });
 
     document.getElementById('focus').addEventListener('click', function () {
-      api.setCameraLookAt([0, -7.413438214244611, 0.3106502245956986], [-2.022618784987591, -0.43206851384109185, 1.0124867100509538], 2, function(err) {
+      api.setCameraLookAt([0, -7.413438214244611, 0.3106502245956986], [-2.022618784987591, -0.43206851384109185, 1.0124867100509538], 2, function (err) {
         if (!err) {
           window.console.log('Camera moved');
         }
@@ -102,7 +136,7 @@ var success = function (api) {
     })
 
     document.getElementById('zoom').addEventListener('click', function () {
-      api.setCameraLookAt([-5.211534864074402, -3.413438214244611, 0.3106502245956986], [0.0000036954879760742188, -0.40043526577064215, 1.1827186105846617], 2, function(err) {
+      api.setCameraLookAt([-5.211534864074402, -3.413438214244611, 0.3106502245956986], [0.0000036954879760742188, -0.40043526577064215, 1.1827186105846617], 2, function (err) {
         if (!err) {
           window.console.log('Camera moved');
         }
@@ -119,6 +153,19 @@ var success = function (api) {
       });
     });
 
+    var switched = false;
+    var textureButton = document.getElementById('texture')
+    textureButton.addEventListener('click', function () {
+       if (switched) {
+        textureButton.textContent = 'no texture';
+            makeMyModelTextured(switched);
+          } else {
+            textureButton.textContent = 'Texture';
+            makeMyModelTextured(switched);
+          }
+          switched = !switched;
+    });
+
 
     api.load(function () {
       window.console.log('Pre-loads the model before starting the viewer');
@@ -130,15 +177,28 @@ var success = function (api) {
 
     document.getElementById('background-image').addEventListener('click', function () {
       // use ?api_log=1 in editor to get those values
-      var list = ['ac8475e46ec94c169ab5774bb1287624', '78fa317e46024a5283765aa34df5e508', '3ef1bd11d3eb4b57a0b353e8f2e5fc3e'];
-      console.log(list);
-      var randBg = Math.floor(Math.random() * Math.floor(list.length));
-      api.setBackground({
-        uid: list[randBg]
-      }, function () {
-        console.log('asked');
-      });
-      console.log(list[randBg]);
+      // var list = ['ac8475e46ec94c169ab5774bb1287624', '78fa317e46024a5283765aa34df5e508', '3ef1bd11d3eb4b57a0b353e8f2e5fc3e'];
+      // console.log(list);
+      // var randBg = Math.floor(Math.random() * Math.floor(list.length));
+      // api.setBackground({
+      //   uid: list[randBg]
+      // }, function () {
+      //   console.log('asked');
+      // });
+      // console.log(list[randBg]);
+
+      api.addTexture('http://127.0.0.1:5502/ec283484-78ff-4039-bedd-b1bc3618d94c.jpg', function(err, textureUid) {
+        if (!err) {
+            window.console.log('New texture registered with UID', textureUid);
+            api.getTextureList(function (err, textures) {
+              if (!err) {
+                window.console.log('textures: ', textures);
+              }
+            });
+        }
+    });
+
+
     });
     document.getElementById('background-color').addEventListener('click', function () {
       var randBgR = Math.random();
@@ -155,6 +215,7 @@ var success = function (api) {
     });
     document.getElementById('environment').addEventListener('click', function () {
       // use ?api_log=1 in editor to get those values
+      // 17A37EF5-FD25-4351-92E3-A39BA39788C0
       var list = ['02751cd893a14f3986fb17a90245f64f', '2a016b232e444ef3a6ba323c51aa5063', '4024128cf8904b69946e891caac5f305'];
       console.log(list);
       var randEnv = Math.floor(Math.random() * Math.floor(list.length));
@@ -172,12 +233,12 @@ var success = function (api) {
     var pbtexture = document.getElementById('pb-texture');
     api.addEventListener('modelLoadProgress', function (eventData) {
       var percent = Math.floor(eventData.progress * 100);
-      console.log('mesh Load Progress', percent);
+      // console.log('mesh Load Progress', percent);
       pbmesh.style.width = percent + '%';
     });
     api.addEventListener('textureLoadProgress', function (eventData) {
       var percent = Math.floor(eventData.progress * 100);
-      console.log('texture Load Progress', percent);
+      // console.log('texture Load Progress', percent);
       pbtexture.style.width = percent + '%';
     });
 
@@ -194,6 +255,11 @@ var success = function (api) {
       //   });
 
       console.log("ready");
+
+      // var textures = [];
+      api.addTexture(blackTextureURL, function (err, textureId) {
+        blackTextureUID = textureId;
+      });
 
 
       api.getNodeMap(function (err, nodes) {
@@ -292,14 +358,24 @@ var success = function (api) {
           preventCameraMove: false
         });
       });
+
+
       api.getMaterialList(function (err, materials) {
         if (!err) {
           window.console.log('materials:', materials);
+          renderDataToDOM(materials);
         }
       });
       api.getTextureList(function (err, textures) {
         if (!err) {
           window.console.log('textures: ', textures);
+          myMaterials = textures;
+          // for (var i = 0; i < myMaterials.length; i++) {
+          //   var m = myMaterials[i];
+          //   textures[m.name] = m.channels.AlbedoPBR.texture;
+          //   console.log(m.name, m);
+          // }
+          renderDataToDOMTextures(textures);
         }
       });
 
@@ -350,43 +426,43 @@ var success = function (api) {
       //   }
       // );
 
-      api.createAnnotationFromWorldPosition(
-        [0.12, -3.57, -0.51],
-        camPo,
-        camTarget,
-        'mytitle2',
-        'mytext2',
-        function (err, index) {
-          if (!err) {
-            window.console.log('Created new annotatation', index + 1);
-          }
-        }
-      );
+      // api.createAnnotationFromWorldPosition(
+      //   [0.12, -3.57, -0.51],
+      //   camPo,
+      //   camTarget,
+      //   'mytitle2',
+      //   'mytext2',
+      //   function (err, index) {
+      //     if (!err) {
+      //       window.console.log('Created new annotatation', index + 1);
+      //     }
+      //   }
+      // );
 
 
-      api.getAnnotation(0, function (err, information) {
-        if (!err) {
-          window.console.log(information);
-        }
-      });
-      api.updateAnnotation(2, {
-        title: 'updatedTitle 1',
-        content: 'updatedContent 1'
-      }, function (err, information) {
-        if (!err) {
-          window.console.log(information);
-        }
-      });
+      // api.getAnnotation(0, function (err, information) {
+      //   if (!err) {
+      //     window.console.log(information);
+      //   }
+      // });
+      // api.updateAnnotation(2, {
+      //   title: 'updatedTitle 1',
+      //   content: 'updatedContent 1'
+      // }, function (err, information) {
+      //   if (!err) {
+      //     window.console.log(information);
+      //   }
+      // });
 
-      api.updateAnnotation(3, {
-        name: 'updatedTitle 2',
-        title: 'updatedTitle 2',
-        content: 'updatedContent 2'
-      }, function (err, information) {
-        if (!err) {
-          window.console.log(information);
-        }
-      });
+      // api.updateAnnotation(3, {
+      //   name: 'updatedTitle 2',
+      //   title: 'updatedTitle 2',
+      //   content: 'updatedContent 2'
+      // }, function (err, information) {
+      //   if (!err) {
+      //     window.console.log(information);
+      //   }
+      // });
 
 
       api.getAnnotationList(function (err, annotations) {
@@ -450,7 +526,7 @@ function generateTree() {
   //console.log("Total Node Count: " + officialNodes.length);
 
   var tree = unflatten(officialNodes);
-  //console.log(tree);
+  console.log('tree: ', tree);
 
   //Create the HTML UL elemenet of the objects
   var navTree = document.getElementById("navTree");
@@ -502,6 +578,8 @@ function unflatten(arr) {
 function to_ul(branches, setID = "", setClass = "") {
   var outerul = document.createElement("ul");
   var lengthOfName = 25;
+  console.log("Branches: " + branches);
+  // console.log("Branches: " + branches[0]);
 
   if (setID != "") {
     outerul.id = setID;
@@ -512,43 +590,105 @@ function to_ul(branches, setID = "", setClass = "") {
 
   for (var i = 0, n = branches.length; i < n; i++) {
     var branch = branches[i];
+
     var li = document.createElement("li");
+    console.table("Branch : " + JSON.stringify(branch));
+    console.table("branch.name : " + branch.name);
+    if (branch.name) {
+      var text = branch.name.replace(/_/g, " ");
 
-    var text = branch.name.replace(/_/g, " ");
-    if (text.length > lengthOfName) {
-      text = text.substring(0, lengthOfName);
-      text += "...";
+      console.log("text: " + text);
+      if (text.length > lengthOfName) {
+        text = text.substring(0, lengthOfName);
+        text += "...";
+      }
+      var textNode = document.createTextNode(text);
+
+      if (branch.isParent) {
+        var sp = document.createElement("span");
+        sp.className = "caret caret-down";
+
+        sp.appendChild(textNode);
+
+        li.appendChild(sp);
+        li.appendChild(createButton("Hide", branch.instanceID, branch.name));
+        li.appendChild(createButton("Show", branch.instanceID, branch.name));
+      } else {
+        var sp2 = document.createElement("span");
+        sp2.className = "caret_child";
+        sp2.appendChild(textNode);
+        li.appendChild(sp2);
+        li.appendChild(createButton("Hide", branch.instanceID, branch.name));
+        li.appendChild(createButton("Show", branch.instanceID, branch.name));
+      }
+
+      console.log("branch.children: " + branch.children);
+      // if (branch.children) {
+      li.appendChild(to_ul(branch.children, branch.instanceID, "nested active"));
+      // }
+
+      outerul.appendChild(li);
     }
-    var textNode = document.createTextNode(text);
-
-    if (branch.isParent) {
-      var sp = document.createElement("span");
-      sp.className = "caret";
-
-      sp.appendChild(textNode);
-
-      li.appendChild(sp);
-      li.appendChild(createButton("Hide", branch.instanceID, branch.name));
-      li.appendChild(createButton("Show", branch.instanceID, branch.name));
-    } else {
-      var sp2 = document.createElement("span");
-      sp2.className = "caret_child";
-      sp2.appendChild(textNode);
-      li.appendChild(sp2);
-      li.appendChild(createButton("Hide", branch.instanceID, branch.name));
-      li.appendChild(createButton("Show", branch.instanceID, branch.name));
-    }
-
-    if (branch.children) {
-      li.appendChild(to_ul(branch.children, branch.instanceID, "nested"));
-    }
-
-    outerul.appendChild(li);
   }
 
   // console.log(outerul);
+  console.log(" - - - - --  - - - - - -- ");
   return outerul;
 }
+
+function renderImagesToDOM(imageData) {
+  const imageList = document.getElementById("image-list");
+
+  imageData.forEach(item => {
+      const listItem = document.createElement("li");
+      const image = document.createElement("img");
+      image.src = item.url;
+      image.width = item.width;
+      image.height = item.height;
+      listItem.appendChild(image);
+      imageList.appendChild(listItem);
+  });
+}
+
+function renderDataToDOM(data) {
+  const dataList = document.getElementById("data-list");
+
+  data.forEach(item => {
+      const listItem = document.createElement("li");
+      listItem.textContent = `Name: ${item.name}, ID: ${item.id}`;
+      dataList.appendChild(listItem);
+  });
+}
+
+function renderDataToDOMTextures(data) {
+  const dataList = document.getElementById("data-textures");
+
+  data.forEach(item => {
+      const listItem = document.createElement("li");
+      listItem.textContent = `Name: ${item.name}, ID: ${item.uid}`;
+      // item.images.forEach(image => {
+      //     const listItem = document.createElement("li");
+      //     listItem.textContent = `Name: ${item.name}, ID: ${item.uid}`;
+    
+      //     dataList.appendChild(listItem);
+    
+      // });
+    
+      dataList.appendChild(listItem);
+      item.images.forEach(item => {
+        // const listItem = document.createElement("div");
+        const image = document.createElement("img");
+        image.src = item.url;
+        image.width = item.width;
+        image.height = item.height;
+        listItem.appendChild(image);
+        dataList.appendChild(listItem);
+    });
+
+  });
+}
+
+
 
 function createButton(btnType, instance, name) {
   var btn = document.createElement("button");
