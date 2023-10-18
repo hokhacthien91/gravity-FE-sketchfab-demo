@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sketchfab Viewer API example</title>
+
+  <script type="text/javascript" src="https://static.sketchfab.com/api/sketchfab-viewer-1.12.1.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Insert an empty iframe with attrubutes, hidden by default using a class-->
+  <div class="py-5 min-height-90vh" style="min-height:90vh; background-color:#272425!important;">
+    <div class="container">
+      <div class="row ">
+        <div class="d-flex flex-column col-md-8 mb-3">
+          <div id="controls" style="text-align: center;">
+            <button id="a0">go to Annotation 0 </button>
+            <button id="environment">Environment</button>
+            <button id="background-image">Background Image</button>
+            <button id="background-color">Background Color</button>
+            <button id="screenshot">📷 Capture</button>
+            <button id="hide">hide</button>
+            <button id="start">start</button>
+            <button id="stop">stop</button>
+          </div>
+          <div>
+            <h3 style="color: white;">Loading</h3>
+            <div class="progress-wrap">
+               <div class="progress-bar" id="pb-mesh"></div>
+            </div>
+            <div class="progress-wrap">
+               <div class="progress-bar" style="background-color: green;" id="pb-texture"></div>
+            </div>
+          </div>
+       <br>
+          <iframe id="api-frame" width="100%" height="auto" allowfullscreen="" mozallowfullscreen="true"
+            webkitallowfullscreen="true"
+            class="mb-3 rounded shadow-lg embed-responsive embed-responsive-4by3 border border-info"
+            loading="lazy"></iframe>
+        </div>
+        <div class="d-flex flex-column col-md-4 mx-auto">
+          <div class="navTree" id="navTree">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Initialize the viewer -->
+
+  <script src="app.js"></script>
+</body>
+
+</html>
