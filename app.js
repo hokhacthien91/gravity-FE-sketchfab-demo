@@ -280,6 +280,7 @@ var success = function (api) {
           api.getTextureList(function (err, textures) {
             if (!err) {
               window.console.log('new list textures: ', textures);
+              document.getElementById("texture").style.display = ''
             }else{
               window.console.log('new list textures error: ', err);
             }
