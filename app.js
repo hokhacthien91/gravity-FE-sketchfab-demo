@@ -687,11 +687,11 @@ function renderImagesToDOM(imageData) {
 
   imageData.forEach(item => {
     const listItem = document.createElement("li");
-    const image = document.createElement("img");
-    image.src = item.url;
-    image.width = item.width;
-    image.height = item.height;
-    listItem.appendChild(image);
+    // const image = document.createElement("img");
+    // image.src = item.url;
+    // image.width = item.width;
+    // image.height = item.height;
+    // listItem.appendChild(image);
     imageList.appendChild(listItem);
   });
 }
@@ -721,15 +721,15 @@ function renderDataToDOMTextures(data) {
     // });
 
     dataList.appendChild(listItem);
-    item.images.forEach(item => {
-      // const listItem = document.createElement("div");
-      const image = document.createElement("img");
-      image.src = item.url;
-      image.width = item.width;
-      image.height = item.height;
-      listItem.appendChild(image);
-      dataList.appendChild(listItem);
-    });
+    // item.images.forEach(item => {
+    //   // const listItem = document.createElement("div");
+    //   const image = document.createElement("img");
+    //   image.src = item.url;
+    //   image.width = item.width;
+    //   image.height = item.height;
+    //   listItem.appendChild(image);
+    //   dataList.appendChild(listItem);
+    // });
 
   });
 }
