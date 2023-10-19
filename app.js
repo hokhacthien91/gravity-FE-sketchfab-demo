@@ -17,13 +17,16 @@ var autoSpin = 0.0;
 //   uid = urlParams.get("id");
 // }
 
-
+var textures = [];
 var client = new window.Sketchfab(version, iframe);
 var canvas = document.createElement('canvas');
 var ctx = canvas.getContext('2d');
 canvas.width = 2;
 canvas.height = 2;
 var myMaterials;
+var newTextureUID;
+// var host = window.location.host;
+var NewTextureURL = window.location.href + '_DSC4201.jpg';
 var getColorAsTextureURL = function getColorAsTextureURL(color) {
   ctx.fillStyle = color;
   ctx.fillRect(0, 0, 2, 2);
@@ -67,22 +70,34 @@ var success = function (api) {
   function makeMyModelTextured(enabled) {
     for (var i = 0; i < myMaterials.length; i++) {
       var m = myMaterials[i];
-      console.log(m.name, m);
+      // console.log('day la gi ', JSON.stringify(m));
       // m.channels.AlbedoPBR.enable = true;
-      // if (enabled) {
-      //   console.log(textures[m.name]);
-      //   m.channels.AlbedoPBR.texture = textures[m.name];
-      //   m.channels.AlbedoPBR.color = false;
-  
-      //   //api.updateTexture(url, m.channels.AlbedoPBR.texture.uid,
-      //   // function(  ) {
-      //   //   api.setMaterial(m);
-      //   //}
-      //   //);
-      // } else {
-      //   m.channels.AlbedoPBR.texture = false;
-      //   m.channels.AlbedoPBR.color = [1, 0, 0, 0];
-      // }
+
+      if (m.name == 'FIATMat' || myMaterials.length > 10) {
+        console.log('textures', textures);
+        console.log('textures[m.name]', textures[m.name]);
+
+        if (enabled) {
+          console.log('Materials Revert Item: ');
+          m.channels.AlbedoPBR.texture = textures[m.name];
+          // m.channels.AlbedoPBR.color = false;
+
+          //api.updateTexture(url, m.channels.AlbedoPBR.texture.uid,
+          // function(  ) {
+          //   api.setMaterial(m);
+          //}
+          //);
+        } else {
+          m.channels.AlbedoPBR.texture = false;
+          // m.channels.AlbedoPBR.color = [1, 0, 0, 0];
+
+          console.log('Materials Update Item: ', m.name, ' - New texture: ' + NewTextureURL, newTextureUID);
+          m.channels.AlbedoPBR.texture = {
+            uid: newTextureUID,
+            // uid: "f8d9092361a94f529c084d830e0dca77",
+          };
+        }
+      }
       api.setMaterial(m);
     }
   }
@@ -156,14 +171,14 @@ var success = function (api) {
     var switched = false;
     var textureButton = document.getElementById('texture')
     textureButton.addEventListener('click', function () {
-       if (switched) {
-        textureButton.textContent = 'no texture';
-            makeMyModelTextured(switched);
-          } else {
-            textureButton.textContent = 'Texture';
-            makeMyModelTextured(switched);
-          }
-          switched = !switched;
+      if (switched) {
+        textureButton.textContent = 'Update Texture';
+        makeMyModelTextured(switched);
+      } else {
+        textureButton.textContent = 'Revert Texture';
+        makeMyModelTextured(switched);
+      }
+      switched = !switched;
     });
 
 
@@ -187,16 +202,17 @@ var success = function (api) {
       // });
       // console.log(list[randBg]);
 
-      api.addTexture('http://127.0.0.1:5502/ec283484-78ff-4039-bedd-b1bc3618d94c.jpg', function(err, textureUid) {
-        if (!err) {
-            window.console.log('New texture registered with UID', textureUid);
-            api.getTextureList(function (err, textures) {
-              if (!err) {
-                window.console.log('textures: ', textures);
-              }
-            });
-        }
-    });
+      //   api.addTexture('http://127.0.0.1:5502/_DSC4201.jpg', function(err, textureUid) {
+      //     if (!err) {
+      //         window.console.log('New texture registered with UID', textureUid);
+
+      //         api.getTextureList(function (err, textures) {
+      //           if (!err) {
+      //             window.console.log('textures 2: ', textures);
+      //           }
+      //         });
+      //     }
+      // });
 
 
     });
@@ -256,9 +272,18 @@ var success = function (api) {
 
       console.log("ready");
 
-      // var textures = [];
-      api.addTexture(blackTextureURL, function (err, textureId) {
-        blackTextureUID = textureId;
+
+      api.addTexture(NewTextureURL, function (err, textureId) {
+        // blackTextureUID = textureId;
+        newTextureUID = textureId;
+        if (!err) {
+          // window.console.log('New texture registered with UID', textureUid);
+          api.getTextureList(function (err, textures) {
+            if (!err) {
+              window.console.log('new listtextures: ', textures);
+            }
+          });
+        }
       });
 
 
@@ -303,7 +328,7 @@ var success = function (api) {
               var childButtons = document
                 .getElementById(this.value)
                 .getElementsByClassName("Hide");
-              console.log(" Child Buttons: " + childButtons.length);
+              // console.log(" Child Buttons: " + childButtons.length);
 
               if (childButtons.length == 0) {
                 api.hide(this.value);
@@ -362,19 +387,21 @@ var success = function (api) {
 
       api.getMaterialList(function (err, materials) {
         if (!err) {
-          window.console.log('materials:', materials);
+          window.console.log('List materials:', materials);
+          myMaterials = materials;
+          for (var i = 0; i < myMaterials.length; i++) {
+            var m = myMaterials[i];
+            textures[m.name] = m.channels.AlbedoPBR.texture;
+            console.log('Materials item: ', m.name, m);
+          }
           renderDataToDOM(materials);
         }
       });
       api.getTextureList(function (err, textures) {
         if (!err) {
-          window.console.log('textures: ', textures);
-          myMaterials = textures;
-          // for (var i = 0; i < myMaterials.length; i++) {
-          //   var m = myMaterials[i];
-          //   textures[m.name] = m.channels.AlbedoPBR.texture;
-          //   console.log(m.name, m);
-          // }
+          window.console.log('List textures: ', textures);
+
+
           renderDataToDOMTextures(textures);
         }
       });
@@ -382,8 +409,8 @@ var success = function (api) {
       var camPo
       var camTarget
       api.getCameraLookAt(function (err, camera) {
-        window.console.log(camera.position); // [x, y, z]
-        window.console.log(camera.target); // [x, y, z]
+        // window.console.log(camera.position); // [x, y, z]
+        // window.console.log(camera.target); // [x, y, z]
         camPo = camera.position
         camTarget = camera.target
       });
@@ -578,7 +605,7 @@ function unflatten(arr) {
 function to_ul(branches, setID = "", setClass = "") {
   var outerul = document.createElement("ul");
   var lengthOfName = 25;
-  console.log("Branches: " + branches);
+  // console.log("Branches: " + branches);
   // console.log("Branches: " + branches[0]);
 
   if (setID != "") {
@@ -592,12 +619,12 @@ function to_ul(branches, setID = "", setClass = "") {
     var branch = branches[i];
 
     var li = document.createElement("li");
-    console.table("Branch : " + JSON.stringify(branch));
-    console.table("branch.name : " + branch.name);
+    // console.table("Branch : " + JSON.stringify(branch));
+    // console.table("branch.name : " + branch.name);
     if (branch.name) {
       var text = branch.name.replace(/_/g, " ");
 
-      console.log("text: " + text);
+      // console.log("text: " + text);
       if (text.length > lengthOfName) {
         text = text.substring(0, lengthOfName);
         text += "...";
@@ -622,7 +649,7 @@ function to_ul(branches, setID = "", setClass = "") {
         li.appendChild(createButton("Show", branch.instanceID, branch.name));
       }
 
-      console.log("branch.children: " + branch.children);
+      // console.log("branch.children: " + branch.children);
       // if (branch.children) {
       li.appendChild(to_ul(branch.children, branch.instanceID, "nested active"));
       // }
@@ -632,7 +659,7 @@ function to_ul(branches, setID = "", setClass = "") {
   }
 
   // console.log(outerul);
-  console.log(" - - - - --  - - - - - -- ");
+  // console.log(" - - - - --  - - - - - -- ");
   return outerul;
 }
 
@@ -640,13 +667,13 @@ function renderImagesToDOM(imageData) {
   const imageList = document.getElementById("image-list");
 
   imageData.forEach(item => {
-      const listItem = document.createElement("li");
-      const image = document.createElement("img");
-      image.src = item.url;
-      image.width = item.width;
-      image.height = item.height;
-      listItem.appendChild(image);
-      imageList.appendChild(listItem);
+    const listItem = document.createElement("li");
+    const image = document.createElement("img");
+    image.src = item.url;
+    image.width = item.width;
+    image.height = item.height;
+    listItem.appendChild(image);
+    imageList.appendChild(listItem);
   });
 }
 
@@ -654,9 +681,9 @@ function renderDataToDOM(data) {
   const dataList = document.getElementById("data-list");
 
   data.forEach(item => {
-      const listItem = document.createElement("li");
-      listItem.textContent = `Name: ${item.name}, ID: ${item.id}`;
-      dataList.appendChild(listItem);
+    const listItem = document.createElement("li");
+    listItem.textContent = `Name: ${item.name}, ID: ${item.id}`;
+    dataList.appendChild(listItem);
   });
 }
 
@@ -664,25 +691,25 @@ function renderDataToDOMTextures(data) {
   const dataList = document.getElementById("data-textures");
 
   data.forEach(item => {
-      const listItem = document.createElement("li");
-      listItem.textContent = `Name: ${item.name}, ID: ${item.uid}`;
-      // item.images.forEach(image => {
-      //     const listItem = document.createElement("li");
-      //     listItem.textContent = `Name: ${item.name}, ID: ${item.uid}`;
-    
-      //     dataList.appendChild(listItem);
-    
-      // });
-    
+    const listItem = document.createElement("li");
+    listItem.textContent = `Name: ${item.name}, ID: ${item.uid}`;
+    // item.images.forEach(image => {
+    //     const listItem = document.createElement("li");
+    //     listItem.textContent = `Name: ${item.name}, ID: ${item.uid}`;
+
+    //     dataList.appendChild(listItem);
+
+    // });
+
+    dataList.appendChild(listItem);
+    item.images.forEach(item => {
+      // const listItem = document.createElement("div");
+      const image = document.createElement("img");
+      image.src = item.url;
+      image.width = item.width;
+      image.height = item.height;
+      listItem.appendChild(image);
       dataList.appendChild(listItem);
-      item.images.forEach(item => {
-        // const listItem = document.createElement("div");
-        const image = document.createElement("img");
-        image.src = item.url;
-        image.width = item.width;
-        image.height = item.height;
-        listItem.appendChild(image);
-        dataList.appendChild(listItem);
     });
 
   });
