@@ -25,8 +25,7 @@ canvas.width = 2;
 canvas.height = 2;
 var myMaterials;
 var newTextureUID;
-// var host = window.location.host;
-var NewTextureURL = window.location.href + '_DSC4201.jpg';
+var NewTextureURL = window.location.origin + '/_DSC4201.jpg';
 var getColorAsTextureURL = function getColorAsTextureURL(color) {
   ctx.fillStyle = color;
   ctx.fillRect(0, 0, 2, 2);
@@ -94,7 +93,7 @@ var success = function (api) {
           console.log('Materials Update Item: ', m.name, ' - New texture: ' + NewTextureURL, newTextureUID);
           m.channels.AlbedoPBR.texture = {
             uid: newTextureUID,
-            // uid: "f8d9092361a94f529c084d830e0dca77",
+            // uid: "6263e4641a774731bc296be7efd1d576",
           };
         }
       }
@@ -277,12 +276,16 @@ var success = function (api) {
         // blackTextureUID = textureId;
         newTextureUID = textureId;
         if (!err) {
-          // window.console.log('New texture registered with UID', textureUid);
+          window.console.log('New texture registered with UID', textureId);
           api.getTextureList(function (err, textures) {
             if (!err) {
-              window.console.log('new listtextures: ', textures);
+              window.console.log('new list textures: ', textures);
+            }else{
+              window.console.log('new list textures error: ', err);
             }
           });
+        }else{
+          window.console.log('add textures error: ', err);
         }
       });
 
