@@ -109,51 +109,66 @@ var success = function (api) {
       api.stop();
     });
 
-    document.getElementById('focus').addEventListener('click', function () {
-      api.setCameraLookAt([0, -7.413438214244611, 0.3106502245956986], [-2.022618784987591, -0.43206851384109185, 1.0124867100509538], 2, function (err) {
+    document.getElementById('zoom').addEventListener('click', function () {
+      api.setCameraLookAt([-1.0115333870306626, -0.5171745449091667, 0.6667441771933946], [0.08070997163950387, 0.20988360879576182, 0.5964411660260114], 2, function (err) {
         if (!err) {
           window.console.log('Camera moved');
         }
       });
     });
 
-    document.getElementById('setCameraConstraints').addEventListener('click', function () {
-      api.setEnableCameraConstraints(true, function () {
-        console.log('cam constraints enabled');
-        api.setCameraConstraints({
-          down: 1,
-          fov: 1,
-          left: 1,
-          nearFarRatio: 0.005,
-          position: [-9.211534864074402, -7.413438214244611, 0.3106502245956986],
-          right: 0.8567979964335799,
-          target: [-2.022618784987591, -0.43206851384109185, 1.0124867100509538],
-          up: 0.5,
-          useCameraConstraints: true,
-          usePanConstraints: true,
-          usePitchConstraints: false,
-          useYawConstraints: true,
-          useZoomConstraints: true,
-          zoomIn: 100,
-          zoomOut: 2233.451310789853
-        }, function (err) {
+    document.getElementById('rider').addEventListener('click', function () {
+      api.setCameraLookAt([0.0837666385140366, 0.7185060568933086, 1.4178827188052991], [0.08070997163950387, 0.20988360879576182, 1.205378122382662], 2, function(err) {
+        // if (!err) {
+        //   window.console.log('Camera moved');
+        // }
+        api.setCameraLookAtEndAnimationCallback(function(err) {
           console.log(err);
-          console.log('cam constraints set');
+          if (!err) {
+            console.log('Camera animation ended.');
+
+            api.setEnableCameraConstraints(true, function () {
+              console.log('cam constraints enabled');
+              api.setUserInteraction(true);
+              api.setCameraConstraints({
+                "down": 0.11119769816280578,
+                "left": -0.006010035229356891,
+                "position": [
+                    0.0837666385140366,
+                    0.7185060568933087,
+                    1.4178827188052991
+                ],
+                "right": -0.006010035229356891,
+                "target": [
+                    0.08070997163950387,
+                    0.20988360879576182,
+                    1.205378122382662
+                ],
+                "up": 0.6347964737611047,
+                "useCameraConstraints": true,
+                "usePanConstraints": true,
+                "usePitchConstraints": true,
+                "useYawConstraints": true,
+                "useZoomConstraints": true,
+                "zoomIn": 0.05123891501042588,
+                "zoomOut": 1.0512389150104258
+            }, function (err) {
+                console.log(err);
+                console.log('cam constraints set');
+              });
+            });
+          }
         });
       });
-    })
+    });
 
-    document.getElementById('noSetCameraConstraints').addEventListener('click', function () {
+    document.getElementById('center').addEventListener('click', function () {
       api.setEnableCameraConstraints(false, function () {
-        console.log('cam constraints not enabled');
-      });
-    })
-
-    document.getElementById('zoom').addEventListener('click', function () {
-      api.setCameraLookAt([-5.211534864074402, -3.413438214244611, 0.3106502245956986], [0.0000036954879760742188, -0.40043526577064215, 1.1827186105846617], 2, function (err) {
-        if (!err) {
-          window.console.log('Camera moved');
-        }
+        api.setCameraLookAt([-2.103776745700829, -1.2442326986140952, 0.737047188360778], [0.08070997163950387, 0.20988360879576182, 0.5964411660260114], 2, function(err) {
+          if (!err) {
+            window.console.log('Camera moved');
+          }
+        });
       });
     });
 
