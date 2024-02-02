@@ -59,7 +59,9 @@ var computeAssociativeArray = function(node){
 }
 */
 
+window.globalApi = null;
 var success = function (api) {
+  window.globalApi = api;
   api.addEventListener('viewerstart', function () {
     console.log('viewerstart');
   });
@@ -102,8 +104,10 @@ var success = function (api) {
   }
   api.start(function () {
     window.console.log('Viewer started');
+    api.start();
+
     document.getElementById('start').addEventListener('click', function () {
-      api.start();
+
     });
     document.getElementById('stop').addEventListener('click', function () {
       api.stop();
@@ -118,11 +122,11 @@ var success = function (api) {
     });
 
     document.getElementById('rider').addEventListener('click', function () {
-      api.setCameraLookAt([0.0837666385140366, 0.7185060568933086, 1.4178827188052991], [0.08070997163950387, 0.20988360879576182, 1.205378122382662], 2, function(err) {
+      api.setCameraLookAt([0.0837666385140366, 0.7185060568933086, 1.4178827188052991], [0.08070997163950387, 0.20988360879576182, 1.205378122382662], 2, function (err) {
         // if (!err) {
         //   window.console.log('Camera moved');
         // }
-        api.setCameraLookAtEndAnimationCallback(function(err) {
+        api.setCameraLookAtEndAnimationCallback(function (err) {
           console.log(err);
           if (!err) {
             console.log('Camera animation ended.');
@@ -134,15 +138,15 @@ var success = function (api) {
                 "down": 0.11119769816280578,
                 "left": -0.006010035229356891,
                 "position": [
-                    0.0837666385140366,
-                    0.7185060568933087,
-                    1.4178827188052991
+                  0.0837666385140366,
+                  0.7185060568933087,
+                  1.4178827188052991
                 ],
                 "right": -0.006010035229356891,
                 "target": [
-                    0.08070997163950387,
-                    0.20988360879576182,
-                    1.205378122382662
+                  0.08070997163950387,
+                  0.20988360879576182,
+                  1.205378122382662
                 ],
                 "up": 0.6347964737611047,
                 "useCameraConstraints": true,
@@ -152,7 +156,7 @@ var success = function (api) {
                 "useZoomConstraints": true,
                 "zoomIn": 0.05123891501042588,
                 "zoomOut": 1.0512389150104258
-            }, function (err) {
+              }, function (err) {
                 console.log(err);
                 console.log('cam constraints set');
               });
@@ -164,7 +168,7 @@ var success = function (api) {
 
     document.getElementById('center').addEventListener('click', function () {
       api.setEnableCameraConstraints(false, function () {
-        api.setCameraLookAt([-2.103776745700829, -1.2442326986140952, 0.737047188360778], [0.08070997163950387, 0.20988360879576182, 0.5964411660260114], 2, function(err) {
+        api.setCameraLookAt([-2.103776745700829, -1.2442326986140952, 0.737047188360778], [0.08070997163950387, 0.20988360879576182, 0.5964411660260114], 2, function (err) {
           if (!err) {
             window.console.log('Camera moved');
           }
@@ -285,6 +289,8 @@ var success = function (api) {
       //   });
 
       console.log("ready");
+      // api.hide(3, 4856, 5228);
+      // api.hide(3);
 
 
       api.addTexture(NewTextureURL, function (err, textureId) {
@@ -296,11 +302,11 @@ var success = function (api) {
             if (!err) {
               window.console.log('new list textures: ', textures);
               document.getElementById("texture").style.display = ''
-            }else{
+            } else {
               window.console.log('new list textures error: ', err);
             }
           });
-        }else{
+        } else {
           window.console.log('add textures error: ', err);
         }
       });
@@ -316,6 +322,9 @@ var success = function (api) {
 
           }
           console.log('nodes: ', nodes);
+          window.nodes = nodes;
+          getMaterialList();
+
           //console.log("nodes indexed by names from flattened array");
           //console.log(myNodesByNameFromMap);
 
@@ -340,6 +349,8 @@ var success = function (api) {
           var hideButtons = document.getElementsByClassName("Hide");
           //console.log('HIDE BUTTONS LENGTH: ' + hideButtons.length);
           for (let i = 0; i < hideButtons.length; i++) {
+            // console.log('Value-----------', this.value)
+            // console.log('Value this-----------', this)
             hideButtons[i].addEventListener("click", function () {
               //api.hide(this.value);
               this.style.backgroundColor = "red";
@@ -358,6 +369,8 @@ var success = function (api) {
                 //console.log(childButtons[i].id);
                 hideBTN.style.backgroundColor = "red";
                 api.hide(hideBTN.value);
+                console.log('this.value hidden', this.value);
+                console.log('this.value hidden', this);
               }
             });
           }
@@ -367,6 +380,8 @@ var success = function (api) {
           for (let k = 0; k < showButtons.length; k++) {
             showButtons[k].addEventListener("click", function () {
               api.show(this.value);
+              console.log('this.value show', this.value);
+              console.log('this.value show', this);
               var hideBTN = document.getElementById(
                 this.id + "_" + this.name + "Hide"
               );
@@ -542,6 +557,46 @@ var success = function (api) {
   // api.stop(function () {
   //   window.console.log('Viewer stopped');
   // });
+  function getMaterialList() {
+    var apiEndpoint = './api/rtc/config/xl750_transalp2023.json';
+
+    // Make API call using jQuery
+    $.ajax({
+      url: apiEndpoint,
+      method: 'GET',
+      dataType: 'json',
+      success: function (data) {
+        // Render the data into HTML
+        console.log('data: ', data);
+        window.xl750_transalp2023 = data;
+        renderAccessoryPacks(window.xl750_transalp2023);
+      },
+      error: function (error) {
+        console.error('Error fetching data from the API:', error);
+      }
+    });
+  }
+
+  function renderAccessoryPacks(categories) {
+    // var accessoryPacksContainer = $('#accessoryPacks');
+
+    // Loop through each category
+    window.xl750_transalp2023On = categories.logic.TRANSALP.action_lists.on
+    console.log('category.logic.TRANSALP.action_lists.on: ', window.xl750_transalp2023On);
+
+    // const result = {};
+    console.log('window.node: ', window.nodes);
+    for (const key in window.xl750_transalp2023On) {
+      // Nếu value của key là "0", tìm và log ra instanceID tương ứng trong mapping
+      if (window.xl750_transalp2023On[key] === "0") {
+        const instanceID = Object.values(window.nodes).find((item) => item.name === key).instanceID;
+        console.log(`${key}: ${instanceID}`);
+        api.hide(instanceID);
+
+      }
+    }
+
+  }
 
 };
 client.init(uid, {
@@ -682,57 +737,57 @@ function to_ul(branches, setID = "", setClass = "") {
   return outerul;
 }
 
-function renderImagesToDOM(imageData) {
-  const imageList = document.getElementById("image-list");
+// function renderImagesToDOM(imageData) {
+//   const imageList = document.getElementById("image-list");
 
-  imageData.forEach(item => {
-    const listItem = document.createElement("li");
-    // const image = document.createElement("img");
-    // image.src = item.url;
-    // image.width = item.width;
-    // image.height = item.height;
-    // listItem.appendChild(image);
-    imageList.appendChild(listItem);
-  });
-}
+//   imageData.forEach(item => {
+//     const listItem = document.createElement("li");
+//     // const image = document.createElement("img");
+//     // image.src = item.url;
+//     // image.width = item.width;
+//     // image.height = item.height;
+//     // listItem.appendChild(image);
+//     imageList.appendChild(listItem);
+//   });
+// }
 
-function renderDataToDOM(data) {
-  const dataList = document.getElementById("data-list");
+// function renderDataToDOM(data) {
+//   const dataList = document.getElementById("data-list");
 
-  data.forEach(item => {
-    const listItem = document.createElement("li");
-    listItem.textContent = `Name: ${item.name}, ID: ${item.id}`;
-    dataList.appendChild(listItem);
-  });
-}
+//   data.forEach(item => {
+//     const listItem = document.createElement("li");
+//     listItem.textContent = `Name: ${item.name}, ID: ${item.id}`;
+//     dataList.appendChild(listItem);
+//   });
+// }
 
-function renderDataToDOMTextures(data) {
-  const dataList = document.getElementById("data-textures");
+// function renderDataToDOMTextures(data) {
+//   const dataList = document.getElementById("data-textures");
 
-  data.forEach(item => {
-    const listItem = document.createElement("li");
-    listItem.textContent = `Name: ${item.name}, ID: ${item.uid}`;
-    // item.images.forEach(image => {
-    //     const listItem = document.createElement("li");
-    //     listItem.textContent = `Name: ${item.name}, ID: ${item.uid}`;
+//   data.forEach(item => {
+//     const listItem = document.createElement("li");
+//     listItem.textContent = `Name: ${item.name}, ID: ${item.uid}`;
+//     // item.images.forEach(image => {
+//     //     const listItem = document.createElement("li");
+//     //     listItem.textContent = `Name: ${item.name}, ID: ${item.uid}`;
 
-    //     dataList.appendChild(listItem);
+//     //     dataList.appendChild(listItem);
 
-    // });
+//     // });
 
-    dataList.appendChild(listItem);
-    // item.images.forEach(item => {
-    //   // const listItem = document.createElement("div");
-    //   const image = document.createElement("img");
-    //   image.src = item.url;
-    //   image.width = item.width;
-    //   image.height = item.height;
-    //   listItem.appendChild(image);
-    //   dataList.appendChild(listItem);
-    // });
+//     dataList.appendChild(listItem);
+//     // item.images.forEach(item => {
+//     //   // const listItem = document.createElement("div");
+//     //   const image = document.createElement("img");
+//     //   image.src = item.url;
+//     //   image.width = item.width;
+//     //   image.height = item.height;
+//     //   listItem.appendChild(image);
+//     //   dataList.appendChild(listItem);
+//     // });
 
-  });
-}
+//   });
+// }
 
 
 
@@ -823,3 +878,5 @@ function isParent(children) {
 
   return result;
 }
+
+

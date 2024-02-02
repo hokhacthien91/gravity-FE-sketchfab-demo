@@ -1,0 +1,441 @@
+{
+  "id": "xl750_transalp",
+  "name": "XL750 Transalp",
+  "logo": null,
+  "background": "",
+  "configuratorBackground": "https://motorcycle-static.honda.eu/media/95612/adventure.png",
+  "usage": [
+    {
+      "id": "On_Off",
+      "name": "On/Off"
+    }
+  ],
+  "variants": [
+    {
+      "id": "xl750_transalp_2023",
+      "year": "2023",
+      "appDefaultParts": [],
+      "appDefaultAccessories": [],
+      "financeCode": "21772",
+      "price": 9699,
+      "price2": 0,
+      "price3": 0,
+      "priceLabel": "RRP",
+      "price2Label": "Offer 1",
+      "price3Label": "Offer 2",
+      "variantPrice1": 9699,
+      "variantPrice2": 0,
+      "variantPrice3": 0,
+      "name": "XL750 Transalp 2023.",
+      "description": "XL750 Transalp 2023.",
+      "copy": "",
+      "handlingCost": 0,
+      "colours": [
+        {
+          "id": "nh-196",
+          "name": "Ross White 2",
+          "swatch": "https://motorcycle-static.honda.eu/assets/xl750_transalp/colour_swatches/nh-196.png",
+          "bikeThumb": "https://motorcycle-renderserver.honda.eu/image/xl750_transalp_2023/nh-196/default/default/0x0x10/default/192x108",
+          "simpleImage": null,
+          "priceTbc": false,
+          "priceTbcText": "",
+          "price": 0,
+          "financeCode": "",
+          "appColourCode": null,
+          "hexColours": []
+        },
+        {
+          "id": "nh-a86m_matte_ballistic_black_metallic",
+          "name": "Matte Ballistic Black Metallic",
+          "swatch": "https://motorcycle-static.honda.eu/assets/xl750_transalp/colour_swatches/nh-a86m_matte_ballistic_black_metallic.png",
+          "bikeThumb": "https://motorcycle-renderserver.honda.eu/image/xl750_transalp_2023/nh-a86m_matte_ballistic_black_metallic/default/default/0x0x10/default/192x108",
+          "simpleImage": null,
+          "priceTbc": false,
+          "priceTbcText": "",
+          "price": 0,
+          "financeCode": "",
+          "appColourCode": null,
+          "hexColours": [
+            "#0A0A0A",
+            "#3F3F3F",
+            "#121212"
+          ]
+        },
+        {
+          "id": "nh-c64m_matte_iridium_grey_metallic",
+          "name": "Matte Iridium Grey Metallic",
+          "swatch": "https://motorcycle-static.honda.eu/assets/xl750_transalp/colour_swatches/nh-c64m_matte_iridium_grey_metallic.png",
+          "bikeThumb": "https://motorcycle-renderserver.honda.eu/image/xl750_transalp_2023/nh-c64m_matte_iridium_grey_metallic/default/default/0x0x10/default/192x108",
+          "simpleImage": null,
+          "priceTbc": false,
+          "priceTbcText": "",
+          "price": 0,
+          "financeCode": "",
+          "appColourCode": null,
+          "hexColours": [
+            "#a1a5a6"
+          ]
+        }
+      ],
+      "spec": [
+        {
+          "grouptitle": "Dimensions and Weights",
+          "groupid": "DIMWIT",
+          "table": [
+            {
+              "id": "BATTERYCAPACITY",
+              "label": "Battery Capacity (VAh)",
+              "value": "12v 8.6Ah"
+            },
+            {
+              "id": "CASTERANGLE",
+              "label": "Caster Angle",
+              "value": "27˚"
+            },
+            {
+              "id": "DIMENSIONS",
+              "label": "Dimensions (L×W×H) (mm)",
+              "value": "2,325mm x 838mm x 1,450mm"
+            },
+            {
+              "id": "FRAMETYPE",
+              "label": "Frame type",
+              "value": "Steel diamond"
+            },
+            {
+              "id": "FUELCAPACITY",
+              "label": "Fuel Tank Capacity (Litres)",
+              "value": "16.9L"
+            },
+            {
+              "id": "FUELCONSUMPTION",
+              "label": "Fuel Consumption",
+              "value": "23km/l"
+            },
+            {
+              "id": "GROUNDCLEARANCE",
+              "label": "Ground Clearance (mm)",
+              "value": "210mm"
+            },
+            {
+              "id": "HEADLIGHTS",
+              "label": "Headlights",
+              "value": "LED"
+            },
+            {
+              "id": "KERBWEIGHT",
+              "label": "Kerb Weight (kg)",
+              "value": "208kg"
+            },
+            {
+              "id": "SEATHEIGHT",
+              "label": "Seat Height (mm)",
+              "value": "850mm"
+            },
+            {
+              "id": "TRAIL",
+              "label": "Trail (mm)",
+              "value": "111mm"
+            },
+            {
+              "id": "WHEELBASE",
+              "label": "Wheelbase (mm)",
+              "value": "1,560mm"
+            },
+            {
+              "id": "TURNINGRADIUS",
+              "label": "Turning Radius",
+              "value": "2.6m"
+            },
+            {
+              "id": "NOISELEVEL",
+              "label": "Noise Level",
+              "value": "Lwot - 79.4; Lurban - 75"
+            }
+          ]
+        },
+        {
+          "grouptitle": "Engine",
+          "groupid": "ENGINE",
+          "table": [
+            {
+              "id": "BORESTROKE",
+              "label": "Bore × Stroke (mm)",
+              "value": "87mm x 63.5mm"
+            },
+            {
+              "id": "CARBURATION",
+              "label": "Carburation",
+              "value": "PGM-FI electronic injection"
+            },
+            {
+              "id": "COMPRESSIONRATIO",
+              "label": "Compression Ratio",
+              "value": "11.0:1"
+            },
+            {
+              "id": "ENGINEDISPLACEMENT",
+              "label": "Engine Displacement (cc)",
+              "value": "755"
+            },
+            {
+              "id": "ENGINETYPE",
+              "label": "Engine Type",
+              "value": "Liquid-cooled OHC 4-stroke 8-valve Parallel Twin with 270° crank and uni-cam"
+            },
+            {
+              "id": "MAXPOWEROUTPUT",
+              "label": "Max. Power Output",
+              "value": "67.5kW @ 9,500rpm"
+            },
+            {
+              "id": "MAXTORQUE",
+              "label": "Max. Torque",
+              "value": "75Nm @ 7,250rpm"
+            },
+            {
+              "id": "STARTER",
+              "label": "Starter",
+              "value": "Electric"
+            },
+            {
+              "id": "CO2EMISSIONS",
+              "label": "C02 Emissions (g/km)",
+              "value": "103 g/km"
+            },
+            {
+              "id": "OILCAPACITY",
+              "label": "Oil Capacity (Litres)",
+              "value": "3.9L"
+            }
+          ]
+        },
+        {
+          "grouptitle": "Transmission",
+          "groupid": "TRANSMIT",
+          "table": [
+            {
+              "id": "CLUTCH",
+              "label": "Clutch",
+              "value": "Wet multiple, Assisted slipper clutch"
+            },
+            {
+              "id": "FINALDRIVE",
+              "label": "Final Drive",
+              "value": "Chain"
+            },
+            {
+              "id": "GEARBOX",
+              "label": "Gearbox",
+              "value": "6 speed Manual Transmission"
+            },
+            {
+              "id": "QUICKSHIFTER",
+              "label": "Quick Shifter",
+              "value": "Optional"
+            }
+          ]
+        },
+        {
+          "grouptitle": "Wheels",
+          "groupid": "WHEELS",
+          "table": [
+            {
+              "id": "ABSSSYSTEMTYPE",
+              "label": "ABS System",
+              "value": "2 channel"
+            },
+            {
+              "id": "BRAKESFRONT",
+              "label": "Brakes Front",
+              "value": "Dual 310mm x 4.5mm disc with axial mount 2 piston calipers"
+            },
+            {
+              "id": "BRAKESREAR",
+              "label": "Brakes Rear",
+              "value": "Single 256mm x 6.0mm disc with single piston caliper"
+            },
+            {
+              "id": "SUSPENSIONFRONT",
+              "label": "Suspension Front",
+              "value": "Showa 43mm SFF-CA USD, 200mm travel"
+            },
+            {
+              "id": "SUSPENSIONREAR",
+              "label": "Suspension Rear",
+              "value": "Separate pressure, Pro-Link swingarm, 190mm travel"
+            },
+            {
+              "id": "TYRESIZEFRONT",
+              "label": "Tyre Size Front",
+              "value": "90/90-21M/C 54H"
+            },
+            {
+              "id": "TYRESIZEREAR",
+              "label": "Tyre Size Rear",
+              "value": "150/70R18M/C 70H"
+            },
+            {
+              "id": "WHEELSFRONT",
+              "label": "Wheels Front",
+              "value": "Stainless spoke, Aluminium rim, Tube type"
+            },
+            {
+              "id": "WHEELSREAR",
+              "label": "Wheels Rear",
+              "value": "Stainless spoke, Aluminium rim, Tube type"
+            }
+          ]
+        },
+        {
+          "grouptitle": "Instruments and Electrics",
+          "groupid": "INSELE",
+          "table": [
+            {
+              "id": "12VSOCKET",
+              "label": "12v Socket",
+              "value": "Optional"
+            },
+            {
+              "id": "HEADLIGHTS",
+              "label": "Headlights",
+              "value": "LED"
+            },
+            {
+              "id": "INSTRUMENTS",
+              "label": "Instruments",
+              "value": "TFT"
+            },
+            {
+              "id": "TAILLIGHT",
+              "label": "Tail Light",
+              "value": "LED"
+            },
+            {
+              "id": "CONNECTIVITY",
+              "label": "Connectivity",
+              "value": "HSVCs"
+            },
+            {
+              "id": "USB",
+              "label": "USB Socket",
+              "value": "Type C"
+            },
+            {
+              "id": "AUTOWINKERCANCEL",
+              "label": "Self Cancelling Indicators",
+              "value": "Yes"
+            },
+            {
+              "id": "ESS",
+              "label": "Emergency Stop Signal",
+              "value": "Yes"
+            },
+            {
+              "id": "SECURITY",
+              "label": "Security",
+              "value": "HISS"
+            }
+          ]
+        },
+        {
+          "grouptitle": "Additional Features",
+          "groupid": "ADDITIONALFEATURES",
+          "table": [
+            {
+              "id": "RIDINGMODES",
+              "label": "Riding Modes",
+              "value": "5 Riding Modes with ABS cancel"
+            }
+          ]
+        }
+      ],
+      "emissions": {
+        "image": null,
+        "content": "",
+        "link": ""
+      },
+      "termsAndConditionsTitle": "",
+      "termsAndConditionsBody": "",
+      "useImportedImages": false,
+      "enableReservationCallToAction": false,
+      "featuredSpecs": [],
+      "engineSize": "755",
+      "licenseType": {
+        "id": "LT-A",
+        "name": "A"
+      },
+      "transmission": "Manual",
+      "disableFinance": false,
+      "accessoryConfigurations": []
+    }
+  ],
+  "appUsps": [
+    {
+      "id": "6d2198b8-7035-44e9-b992-76e3ce20fde2",
+      "title": "Ready To Ride Rough",
+      "description": "From dirt tracks to green lanes, long-stroke Showa suspension and 12/18-inch tyres roll smoothly over rough terrain.",
+      "textPosition": "",
+      "camera": "Fork1",
+      "variants": [
+        "xl750_transalp_2023"
+      ],
+      "index": 0
+    },
+    {
+      "id": "ac06527b-658e-451e-8743-0b73b6b752d6",
+      "title": "Lightweight Steering Chassis For Intuitive Handling",
+      "description": "At 18.3kg the steel diamond-style frame is light and integrates a sturdy rear subframe to support long-range touring loads.",
+      "textPosition": "",
+      "camera": "Design1",
+      "variants": [
+        "xl750_transalp_2023"
+      ],
+      "index": 1
+    },
+    {
+      "id": "cbacbf7e-5f6b-4206-96d1-eb243c8fcbaa",
+      "title": "Colour TFT Display & Smartphone Connectivity",
+      "description": "HSVCs through the Honda RoadSync app allows you to control navigation, calls and music via a Bluetooth headset.",
+      "textPosition": "",
+      "camera": "Dashboard1",
+      "variants": [
+        "xl750_transalp_2023"
+      ],
+      "index": 2
+    },
+    {
+      "id": "7a6f6769-49f0-4318-bfbb-6e4b8dcacac8",
+      "title": "Optimised Wind Protection and All-Day Comfort",
+      "description": "The Transalp slips through high-speed airflow efficiently, for more relaxed highway cruising whilst reducing fatigue.",
+      "textPosition": "",
+      "camera": "WindShield1",
+      "variants": [
+        "xl750_transalp_2023"
+      ],
+      "index": 3
+    },
+    {
+      "id": "a51f8722-940a-48e2-adb1-2aa7195f3838",
+      "title": "Advanced Technology for Riding Confidence",
+      "description": "HSTC monitors front and rear wheel speeds to detect loss of rear traction or front lift, and adjust engine output accordingly.",
+      "textPosition": "",
+      "camera": "Suspension1",
+      "variants": [
+        "xl750_transalp_2023"
+      ],
+      "index": 4
+    },
+    {
+      "id": "8cebc8cb-6388-4526-8cd7-77f001052f0a",
+      "title": "35kW A2 Licence Option Available",
+      "description": "You can choose your Transalp with 35kW from new – so it’s A2 licence compatible.",
+      "textPosition": "",
+      "camera": "Engine1",
+      "variants": [
+        "xl750_transalp_2023"
+      ],
+      "index": 5
+    }
+  ]
+}

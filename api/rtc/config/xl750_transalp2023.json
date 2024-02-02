@@ -1,0 +1,2668 @@
+{
+  "id": "xl750_transalp",
+  "uid": "ee51e48476cb43099a8ba3904601ef91",
+  "logic": {
+    "08L80-MKT-D00MC": {
+      "type": "code",
+      "collection": "Accessory",
+      "description": "Side Case Panels Multicolour",
+      "dependencies": [
+        "08HME-MLC-TOU",
+        "08HME-MLC-DEM",
+        "08ESY-MLC-PNAL"
+      ],
+      "condition": null,
+      "action_lists": {
+        "on": {
+          "switch_sidecasespanels": "1",
+          "switch_sidecases": "1",
+          "switch_sidecasesmounting": "1"
+        },
+        "off": {
+          "switch_sidecasespanels": "0",
+          "switch_sidecasesmounting": "0",
+          "switch_sidecases": "0"
+        }
+      }
+    },
+    "switch_sidecasespanels": {
+      "type": "switcher",
+      "collection": "",
+      "description": "",
+      "dependencies": [
+        "08L80-MKT-D00MC",
+        "08L72-MKT-D00",
+        "08L72-MLC-D00",
+        "TRANSALP",
+        "08L80-MKT-D00A"
+      ],
+      "condition": null,
+      "action_lists": {
+        "0": "-",
+        "1": "sidecasespanels_w_acc_multicolour_08l80_mkt_d00",
+        "2": "sidecasespanels_w_acc_aluminium_08l80_mkt_d00"
+      }
+    },
+    "switch_sidecases": {
+      "type": "switcher",
+      "collection": "",
+      "description": "",
+      "dependencies": [
+        "08L80-MKT-D00MC",
+        "08L72-MKT-D00",
+        "08L72-MLC-D00",
+        "TRANSALP",
+        "08L80-MKT-D00A"
+      ],
+      "condition": null,
+      "action_lists": {
+        "0": "-",
+        "1": "sidecases_w_acc_aluminium_08l72_mkt_d00"
+      }
+    },
+    "switch_sidecasesmounting": {
+      "type": "switcher",
+      "collection": "",
+      "description": "",
+      "dependencies": [
+        "08L80-MKT-D00MC",
+        "08L72-MKT-D00",
+        "08L72-MLC-D00",
+        "TRANSALP",
+        "08L80-MKT-D00A"
+      ],
+      "condition": null,
+      "action_lists": {
+        "0": "-",
+        "1": "sidecasesmounting_w_acc_pannierstay_08l72_mlc_d00"
+      }
+    },
+    "08L73-MKT-D00": {
+      "type": "code",
+      "collection": "Accessory",
+      "description": "50L Top Case",
+      "dependencies": [
+        "08HME-MLC-DEM",
+        "08HME-MLC-URB",
+        "08ESY-MLC-TB50"
+      ],
+      "condition": null,
+      "action_lists": {
+        "on": {
+          "switch_topcase": "1",
+          "switch_topcasemounting": "1"
+        },
+        "off": {
+          "switch_topcase": "0",
+          "switch_topcasepanel": "0",
+          "switch_topcasemounting": "0",
+          "switch_pillionbackrestpad": "0"
+        }
+      }
+    },
+    "switch_topcase": {
+      "type": "switcher",
+      "collection": "",
+      "description": "",
+      "dependencies": [
+        "08L73-MKT-D00",
+        "08L70-MLC-D00ZA",
+        "08R74-MLF-E00ZA",
+        "TRANSALP",
+        "08L83-MKT-D00"
+      ],
+      "condition": null,
+      "action_lists": {
+        "0": "-",
+        "1": "topcase_w_acc_50lsportcase_08l73_mkt_d00"
+      }
+    },
+    "switch_topcasemounting": {
+      "type": "switcher",
+      "collection": "",
+      "description": "",
+      "dependencies": [
+        "08L73-MKT-D00",
+        "08L70-MLC-D00ZA",
+        "08R74-MLF-E00ZA",
+        "TRANSALP",
+        "08L83-MKT-D00"
+      ],
+      "condition": null,
+      "action_lists": {
+        "0": "-",
+        "1": "topcasemounting_w_acc_casestay_08l70_mlc_d00za"
+      }
+    },
+    "switch_topcasepanel": {
+      "type": "switcher",
+      "collection": "",
+      "description": "",
+      "dependencies": [
+        "08L73-MKT-D00",
+        "08L70-MLC-D00ZA",
+        "08R74-MLF-E00ZA",
+        "TRANSALP",
+        "08L83-MKT-D00"
+      ],
+      "condition": null,
+      "action_lists": {
+        "0": "-",
+        "1": "topcasepanel_w_acc_aluminium_08l83_mkt_d00"
+      }
+    },
+    "switch_pillionbackrestpad": {
+      "type": "switcher",
+      "collection": "",
+      "description": "",
+      "dependencies": [
+        "08L73-MKT-D00",
+        "08L70-MLC-D00ZA",
+        "08R74-MLF-E00ZA",
+        "TRANSALP",
+        "08L83-MKT-D00"
+      ],
+      "condition": null,
+      "action_lists": {
+        "0": "-",
+        "1": "pillionbackrestpad_w_acc_sportcaseattache_08r74_mlf_e00za"
+      }
+    },
+    "08R74-MLC-D00ZB": {
+      "type": "code",
+      "collection": "Accessory",
+      "description": "20mm low saddle",
+      "dependencies": [
+        "08HME-MLC-DEM"
+      ],
+      "condition": null,
+      "action_lists": {
+        "on": {
+          "switch_saddle": "1"
+        },
+        "off": {
+          "switch_saddle": "0"
+        }
+      }
+    },
+    "switch_saddle": {
+      "type": "switcher",
+      "collection": "",
+      "description": "",
+      "dependencies": [
+        "08R74-MLC-D00ZB",
+        "TRANSALP"
+      ],
+      "condition": null,
+      "action_lists": {
+        "0": "saddle_s_std_standard",
+        "1": "saddle_w_acc_20mmlow_08r74_mlc_d00zb"
+      }
+    },
+    "08L72-MKT-D00": {
+      "type": "code",
+      "collection": "Accessory",
+      "description": "Side Cases",
+      "dependencies": [
+        "08HME-MLC-TOU",
+        "08HME-MLC-DEM",
+        "08ESY-MLC-PNAL"
+      ],
+      "condition": null,
+      "action_lists": {
+        "on": {
+          "switch_sidecases": "1",
+          "switch_sidecasesmounting": "1"
+        },
+        "off": {
+          "switch_sidecases": "0",
+          "switch_sidecasesmounting": "0",
+          "switch_sidecasespanels": "0"
+        }
+      }
+    },
+    "08M70-MLC-D00": {
+      "type": "code",
+      "collection": "Accessory",
+      "description": "Main Stand",
+      "dependencies": [
+        "08HME-MLC-DEM",
+        "08HME-MLC-URB"
+      ],
+      "condition": null,
+      "action_lists": {
+        "on": {
+          "switch_standcenter": "1"
+        },
+        "off": {
+          "switch_standcenter": "0"
+        }
+      }
+    },
+    "switch_standcenter": {
+      "type": "switcher",
+      "collection": "",
+      "description": "",
+      "dependencies": [
+        "08M70-MLC-D00",
+        "TRANSALP"
+      ],
+      "condition": null,
+      "action_lists": {
+        "0": "-",
+        "1": "standcenter_w_acc_main_08m70_mlc_d00"
+      }
+    },
+    "08L89-MKS-E00": {
+      "type": "code",
+      "collection": "Accessory",
+      "description": "3L Tankbag",
+      "dependencies": [
+        "08HME-MLC-COM",
+        "08HME-MLC-DEM"
+      ],
+      "condition": null,
+      "action_lists": {
+        "on": {
+          "switch_tankbag": "1"
+        },
+        "off": {
+          "switch_tankbag": "0"
+        }
+      }
+    },
+    "switch_tankbag": {
+      "type": "switcher",
+      "collection": "",
+      "description": "",
+      "dependencies": [
+        "08L89-MKS-E00",
+        "TRANSALP"
+      ],
+      "condition": null,
+      "action_lists": {
+        "0": "-",
+        "1": "tankbag_w_acc_3lmagnetic_08l89_mks_e00"
+      }
+    },
+    "08L72-MLC-D00": {
+      "type": "code",
+      "collection": "Accessory",
+      "description": "Side Cases Mounting",
+      "dependencies": [
+        "08HME-MLC-TOU",
+        "08HME-MLC-DEM",
+        "08ESY-MLC-PNAL"
+      ],
+      "condition": null,
+      "action_lists": {
+        "on": {
+          "switch_sidecasesmounting": "1"
+        },
+        "off": {
+          "switch_sidecasesmounting": "0",
+          "switch_sidecasespanels": "0",
+          "switch_sidecases": "0"
+        }
+      }
+    },
+    "08F73-MLC-D00ZB": {
+      "type": "code",
+      "collection": "Accessory",
+      "description": "Rim Stripes Grey",
+      "dependencies": [],
+      "condition": null,
+      "action_lists": {
+        "on": {
+          "switch_rimstripes": "2"
+        },
+        "off": {
+          "switch_rimstripes": "0"
+        }
+      }
+    },
+    "switch_rimstripes": {
+      "type": "switcher",
+      "collection": "",
+      "description": "",
+      "dependencies": [
+        "08F73-MLC-D00ZB",
+        "08F73-MLC-D00ZA",
+        "TRANSALP"
+      ],
+      "condition": null,
+      "action_lists": {
+        "0": "-",
+        "1": "rimstripes_w_acc_white_08f73_mlc_d00za",
+        "2": "rimstripes_w_acc_gray_08f73_mlc_d00zb"
+      }
+    },
+    "08F73-MLC-D00ZA": {
+      "type": "code",
+      "collection": "Accessory",
+      "description": "Rim Stripes White",
+      "dependencies": [
+        "08HME-MLC-DEM"
+      ],
+      "condition": null,
+      "action_lists": {
+        "on": {
+          "switch_rimstripes": "1"
+        },
+        "off": {
+          "switch_rimstripes": "0"
+        }
+      }
+    },
+    "08L70-MLC-D00ZA": {
+      "type": "code",
+      "collection": "Accessory",
+      "description": "Top Case Mounting",
+      "dependencies": [
+        "08HME-MLC-URB",
+        "08ESY-MLC-TB50"
+      ],
+      "condition": null,
+      "action_lists": {
+        "on": {
+          "switch_topcasemounting": "1"
+        },
+        "off": {
+          "switch_topcasemounting": "0",
+          "switch_topcase": "0",
+          "switch_topcasepanel": "0",
+          "switch_pillionbackrestpad": "0"
+        }
+      }
+    },
+    "08HME-MLC-ADV": {
+      "type": "code",
+      "collection": "Accessory Package",
+      "description": "Adventure Pack 2",
+      "dependencies": [],
+      "condition": null,
+      "action_lists": {
+        "on": {
+          "08F74-MLC-D00": "on",
+          "08P72-MLC-D00": "on",
+          "08V70-MLC-D00": "on",
+          "08P74-MLC-D00": "on"
+        },
+        "off": {
+          "08F74-MLC-D00": "off",
+          "08P72-MLC-D00": "off",
+          "08V70-MLC-D00": "off",
+          "08P74-MLC-D00": "off"
+        }
+      }
+    },
+    "08F74-MLC-D00": {
+      "type": "code",
+      "collection": "Accessory",
+      "description": "Radiator Grill",
+      "dependencies": [
+        "08HME-MLC-ADV",
+        "08HME-MLC-DEM"
+      ],
+      "condition": null,
+      "action_lists": {
+        "on": {
+          "switch_radiatorgrill": "1"
+        },
+        "off": {
+          "switch_radiatorgrill": "0"
+        }
+      }
+    },
+    "08P72-MLC-D00": {
+      "type": "code",
+      "collection": "Accessory",
+      "description": "Fairing Crash Guard",
+      "dependencies": [
+        "08HME-MLC-ADV",
+        "08HME-MLC-DEM"
+      ],
+      "condition": null,
+      "action_lists": {
+        "on": {
+          "switch_crashguard": "1",
+          "switch_engineguardattachment": "1"
+        },
+        "off": {
+          "switch_crashguard": "0",
+          "switch_engineguardattachment": "0",
+          "switch_foglightattachment": "0"
+        }
+      }
+    },
+    "08V70-MLC-D00": {
+      "type": "code",
+      "collection": "Accessory",
+      "description": "Foglight Attachment",
+      "dependencies": [
+        "08HME-MLC-ADV",
+        "08ESY-MLC-FFL",
+        "08HME-MLC-DEM"
+      ],
+      "condition": null,
+      "action_lists": {
+        "on": {
+          "switch_foglightattachment": "1",
+          "switch_crashguard": "1",
+          "switch_engineguardattachment": "1"
+        },
+        "off": {
+          "switch_foglightattachment": "0",
+          "switch_crashguard": "0",
+          "switch_engineguardattachment": "0"
+        }
+      }
+    },
+    "08P74-MLC-D00": {
+      "type": "code",
+      "collection": "Accessory",
+      "description": "Engine Guard Attachment",
+      "dependencies": [
+        "08HME-MLC-ADV",
+        "08HME-MLC-RALZ",
+        "08HME-MLC-DEM",
+        "08ESY-MLC-ENG"
+      ],
+      "condition": null,
+      "action_lists": {
+        "on": {
+          "switch_engineguardattachment": "1"
+        },
+        "off": {
+          "switch_engineguardattachment": "0",
+          "switch_engineguard": "0",
+          "switch_crashguard": "0",
+          "switch_foglightattachment": "0"
+        }
+      }
+    },
+    "08P72-MKS-E00ZC": {
+      "type": "code",
+      "collection": "Accessory",
+      "description": "Knuckle Guard Extensions",
+      "dependencies": [],
+      "condition": null,
+      "action_lists": {
+        "on": {
+          "switch_knuckleguardextension": "1",
+          "switch_knuckleguard": "1",
+          "t_paint_IV": "_NH-1_M"
+        },
+        "off": {
+          "switch_knuckleguardextension": "0",
+          "switch_knuckleguard": "0"
+        }
+      }
+    },
+    "switch_knuckleguardextension": {
+      "type": "switcher",
+      "collection": "",
+      "description": "",
+      "dependencies": [
+        "08P72-MKS-E00ZC",
+        "08P77-MLC-D00",
+        "08P72-MKS-E00ZB",
+        "TRANSALP"
+      ],
+      "condition": null,
+      "action_lists": {
+        "0": "-",
+        "1": "knuckleguardextension_w_acc_advanced_08p72_mks_e00z"
+      }
+    },
+    "switch_knuckleguard": {
+      "type": "switcher",
+      "collection": "",
+      "description": "",
+      "dependencies": [
+        "08P72-MKS-E00ZC",
+        "08P77-MLC-D00",
+        "08P72-MKS-E00ZB",
+        "TRANSALP"
+      ],
+      "condition": null,
+      "action_lists": {
+        "0": "-",
+        "1": "knuckleguard_w_acc_advanced_08p77_mlc_d00"
+      }
+    },
+    
+    "t_paint_IV": {
+      "type": "look",
+      "collection": "",
+      "description": "",
+      "dependencies": [
+        "08P72-MKS-E00ZC",
+        "08P72-MKS-E00ZB"
+      ],
+      "condition": null,
+      "action_lists": {
+        "_NH-1_M": "",
+        "_NH-196_M": ""
+      }
+    },
+    "08HME-MLC-TOU": {
+      "type": "code",
+      "collection": "Accessory Package",
+      "description": "Tour Pack",
+      "dependencies": [],
+      "condition": null,
+      "action_lists": {
+        "on": {
+          "08L72-MKT-D00": "on",
+          "08L80-MKT-D00A": "on",
+          "08L72-MLC-D00": "on",
+          "08T70-MLC-D00": "on"
+        },
+        "off": {
+          "08L72-MKT-D00": "off",
+          "08L80-MKT-D00A": "off",
+          "08L72-MLC-D00": "off",
+          "08T70-MLC-D00": "off"
+        }
+      }
+    },
+    "08T70-MLC-D00": {
+      "type": "code",
+      "collection": "Accessory",
+      "description": "Heated Handgrips",
+      "dependencies": [
+        "08HME-MLC-TOU",
+        "08HME-MLC-DEM"
+      ],
+      "condition": null,
+      "action_lists": {
+        "on": {
+          "switch_handgrips": "1"
+        },
+        "off": {
+          "switch_handgrips": "0"
+        }
+      }
+    },
+    "08ESY-MLC-DFL": {
+      "type": "code",
+      "collection": "Kit",
+      "description": "Easy Deflectors Kit",
+      "dependencies": [],
+      "condition": null,
+      "action_lists": {
+        "on": {
+          "08R70-MLC-D00": "on",
+          "08R72-MLC-D00": "on"
+        },
+        "off": {
+          "08R70-MLC-D00": "off",
+          "08R72-MLC-D00": "off"
+        }
+      }
+    },
+    "08R70-MLC-D00": {
+      "type": "code",
+      "collection": "Accessory",
+      "description": "Front Fairing Deflector",
+      "dependencies": [
+        "08ESY-MLC-DFL",
+        "08HME-MLC-COM",
+        "08HME-MLC-DEM"
+      ],
+      "condition": null,
+      "action_lists": {
+        "on": {
+          "switch_deflectorfairing": "1"
+        },
+        "off": {
+          "switch_deflectorfairing": "0"
+        }
+      }
+    },
+    "08R72-MLC-D00": {
+      "type": "code",
+      "collection": "Accessory",
+      "description": "Windscreen Deflector",
+      "dependencies": [
+        "08ESY-MLC-DFL",
+        "08HME-MLC-COM",
+        "08HME-MLC-DEM"
+      ],
+      "condition": null,
+      "action_lists": {
+        "on": {
+          "switch_deflectorfront": "1"
+        },
+        "off": {
+          "switch_deflectorfront": "0"
+        }
+      }
+    },
+    "08R74-MLF-E00ZA": {
+      "type": "code",
+      "collection": "Accessory",
+      "description": "Pillion Backrest Pad",
+      "dependencies": [
+        "08HME-MLC-DEM",
+        "08HME-MLC-URB",
+        "08ESY-MLC-TB50"
+      ],
+      "condition": null,
+      "action_lists": {
+        "on": {
+          "switch_pillionbackrestpad": "1",
+          "switch_topcasemounting": "1",
+          "switch_topcase": "1"
+        },
+        "off": {
+          "switch_pillionbackrestpad": "0",
+          "switch_topcasemounting": "0",
+          "switch_topcase": "0",
+          "switch_topcasepanel": "0"
+        }
+      }
+    },
+    "08ESY-MLC-FFL": {
+      "type": "code",
+      "collection": "Kit",
+      "description": "Front Fog Lights Kit",
+      "dependencies": [],
+      "condition": null,
+      "action_lists": {
+        "on": {
+          "08V70-MLC-D00": "on"
+        },
+        "off": {
+          "08V70-MLC-D00": "off"
+        }
+      }
+    },
+    "08HME-MLC-COM": {
+      "type": "code",
+      "collection": "Accessory Package",
+      "description": "Comfort Pack",
+      "dependencies": [],
+      "condition": null,
+      "action_lists": {
+        "on": {
+          "08L89-MKS-E00": "on",
+          "08U71-MKK-D00": "on",
+          "08R70-MLC-D00": "on",
+          "08R72-MLC-D00": "on",
+          "08R71-MJP-G50": "on"
+        },
+        "off": {
+          "08L89-MKS-E00": "off",
+          "08R72-MLC-D00": "off",
+          "08R70-MLC-D00": "off",
+          "08R71-MJP-G50": "off",
+          "08U71-MKK-D00": "off"
+        }
+      }
+    },
+    "08U71-MKK-D00": {
+      "type": "code",
+      "collection": "Accessory",
+      "description": "12V Charging Port",
+      "dependencies": [
+        "08HME-MLC-COM",
+        "08HME-MLC-DEM"
+      ],
+      "condition": null,
+      "action_lists": {
+        "on": {
+          "switch_chargingport": "1"
+        },
+        "off": {
+          "switch_chargingport": "0"
+        }
+      }
+    },
+    "08R71-MJP-G50": {
+      "type": "code",
+      "collection": "Accessory",
+      "description": "Comfort Pillion Footpegs",
+      "dependencies": [
+        "08HME-MLC-COM",
+        "08HME-MLC-DEM"
+      ],
+      "condition": null,
+      "action_lists": {
+        "on": {
+          "switch_pillionfootpegs": "1"
+        },
+        "off": {
+          "switch_pillionfootpegs": "0"
+        }
+      }
+    },
+    "08HME-MLC-RALZ": {
+      "type": "code",
+      "collection": "Accessory Package",
+      "description": "Rally Pack",
+      "dependencies": [],
+      "condition": null,
+      "action_lists": {
+        "on": {
+          "08P71-MLC-D00": "on",
+          "08P77-MLC-D00": "on",
+          "08P72-MKS-E00ZB": "on",
+          "08R79-MKS-E00": "on",
+          "08P73-MLC-D00": "on",
+          "08P74-MLC-D00": "on",
+          "08U70-MLC-D00": "on"
+        },
+        "off": {
+          "08P71-MLC-D00": "off",
+          "08U70-MLC-D00": "off",
+          "08P77-MLC-D00": "off",
+          "08P72-MKS-E00ZB": "off",
+          "08P73-MLC-D00": "off",
+          "08P74-MLC-D00": "off",
+          "08R79-MKS-E00": "off"
+        }
+      }
+    },
+    "08P71-MLC-D00": {
+      "type": "code",
+      "collection": "Accessory",
+      "description": "Aluminium Skid Plate",
+      "dependencies": [
+        "08HME-MLC-RALZ",
+        "08HME-MLC-DEM"
+      ],
+      "condition": null,
+      "action_lists": {
+        "on": {
+          "switch_skidplate": "1",
+          "switch_engineguard": "1",
+          "switch_engineguardattachment": "1"
+        },
+        "off": {
+          "switch_skidplate": "0",
+          "switch_engineguard": "0",
+          "switch_engineguardattachment": "0"
+        }
+      }
+    },
+    "08P77-MLC-D00": {
+      "type": "code",
+      "collection": "Accessory",
+      "description": "Knuckle Guard",
+      "dependencies": [
+        "08HME-MLC-RALZ",
+        "08HME-MLC-DEM",
+        "08ESY-MLC-KNGZ"
+      ],
+      "condition": null,
+      "action_lists": {
+        "on": {
+          "switch_knuckleguard": "1"
+        },
+        "off": {
+          "switch_knuckleguard": "0",
+          "switch_knuckleguardextension": "0"
+        }
+      }
+    },
+    "08P72-MKS-E00ZB": {
+      "type": "code",
+      "collection": "Accessory",
+      "description": "Knuckle Guard Extensions",
+      "dependencies": [
+        "08HME-MLC-RALZ",
+        "08HME-MLC-DEM",
+        "08ESY-MLC-KNGZ"
+      ],
+      "condition": null,
+      "action_lists": {
+        "on": {
+          "switch_knuckleguardextension": "1",
+          "switch_knuckleguard": "1",
+          "t_paint_IV": "_NH-196_M"
+        },
+        "off": {
+          "switch_knuckleguardextension": "0",
+          "switch_knuckleguard": "0"
+        }
+      }
+    },
+    "08R79-MKS-E00": {
+      "type": "code",
+      "collection": "Accessory",
+      "description": "Rally Rider Footpegs",
+      "dependencies": [
+        "08HME-MLC-RALZ",
+        "08HME-MLC-DEM"
+      ],
+      "condition": null,
+      "action_lists": {
+        "on": {
+          "switch_riderfootpegs": "1"
+        },
+        "off": {
+          "switch_riderfootpegs": "0"
+        }
+      }
+    },
+    "08P73-MLC-D00": {
+      "type": "code",
+      "collection": "Accessory",
+      "description": "Engine Guard",
+      "dependencies": [
+        "08HME-MLC-RALZ",
+        "08HME-MLC-DEM",
+        "08ESY-MLC-ENG"
+      ],
+      "condition": null,
+      "action_lists": {
+        "on": {
+          "switch_engineguard": "1",
+          "switch_engineguardattachment": "1"
+        },
+        "off": {
+          "switch_engineguard": "0",
+          "switch_skidplate": "0",
+          "switch_engineguardattachment": "0"
+        }
+      }
+    },
+    "08U70-MLC-D00": {
+      "type": "code",
+      "collection": "Accessory",
+      "description": "Advanced Quickshifter",
+      "dependencies": [
+        "08HME-MLC-RALZ",
+        "08HME-MLC-DEM"
+      ],
+      "condition": null,
+      "action_lists": {
+        "on": {
+          "switch_quickshifter": "1"
+        },
+        "off": {
+          "switch_quickshifter": "0"
+        }
+      }
+    },
+    "switch_pillionfootpegs": {
+      "type": "switcher",
+      "collection": "",
+      "description": "",
+      "dependencies": [
+        "08R71-MJP-G50",
+        "TRANSALP"
+      ],
+      "condition": null,
+      "action_lists": {
+        "0": "pillionfootpegs_s_std_standard",
+        "1": "pillionfootpegs_w_acc_comfort_08r71_mjp_g50"
+      }
+    },
+    "switch_skidplate": {
+      "type": "switcher",
+      "collection": "",
+      "description": "",
+      "dependencies": [
+        "08P71-MLC-D00",
+        "08P73-MLC-D00",
+        "TRANSALP"
+      ],
+      "condition": null,
+      "action_lists": {
+        "0": "-",
+        "1": "skidplate_w_acc_aluminium_08p71_mlc_d00"
+      }
+    },
+    "switch_engineguard": {
+      "type": "switcher",
+      "collection": "",
+      "description": "",
+      "dependencies": [
+        "08P74-MLC-D00",
+        "08P71-MLC-D00",
+        "08P73-MLC-D00",
+        "TRANSALP"
+      ],
+      "condition": null,
+      "action_lists": {
+        "0": "-",
+        "1": "engineguard_w_acc_eng_08p73_mlc_d00"
+      }
+    },
+    "switch_engineguardattachment": {
+      "type": "switcher",
+      "collection": "",
+      "description": "",
+      "dependencies": [
+        "08P72-MLC-D00",
+        "08V70-MLC-D00",
+        "08P74-MLC-D00",
+        "08P71-MLC-D00",
+        "08P73-MLC-D00",
+        "TRANSALP"
+      ],
+      "condition": null,
+      "action_lists": {
+        "0": "-",
+        "1": "engineguardattachment_w_acc_eng_08p74_mlc_d00"
+      }
+    },
+    "08P70-MLC-D00ZA": {
+      "type": "code",
+      "collection": "Accessory",
+      "description": "Tankpad Decals Blue",
+      "dependencies": [
+        "08HME-MLC-DEM"
+      ],
+      "condition": null,
+      "action_lists": {
+        "on": {
+          "switch_tankpaddecals": "1",
+          "t_paint_V": "_Blue6_M"
+        },
+        "off": {
+          "switch_tankpaddecals": "0"
+        }
+      }
+    },
+    "switch_tankpaddecals": {
+      "type": "switcher",
+      "collection": "",
+      "description": "",
+      "dependencies": [
+        "08P70-MLC-D00ZA",
+        "TRANSALP",
+        "08P70-MLC-D00ZB",
+        "08P70-MLC-D00ZC"
+      ],
+      "condition": null,
+      "action_lists": {
+        "0": "-",
+        "1": "tankpaddecals_w_acc_sticker_08p70_mlc_d00z"
+      }
+    },
+    "t_paint_V": {
+      "type": "look",
+      "collection": "",
+      "description": "",
+      "dependencies": [
+        "08P70-MLC-D00ZA",
+        "08P70-MLC-D00ZB",
+        "08P70-MLC-D00ZC"
+      ],
+      "condition": null,
+      "action_lists": {
+        "_Blue6_M": "",
+        "_NH-A86M-Black-Flakes_M": "",
+        "_NHC34M_M": ""
+      }
+    },
+    "08R73-MLC-D00": {
+      "type": "code",
+      "collection": "Accessory",
+      "description": "Tall Windscreen",
+      "dependencies": [
+        "08HME-MLC-DEM",
+        "08HME-MLC-URB"
+      ],
+      "condition": null,
+      "action_lists": {
+        "on": {
+          "switch_windscreen": "1"
+        },
+        "off": {
+          "switch_windscreen": "0"
+        }
+      }
+    },
+    "switch_windscreen": {
+      "type": "switcher",
+      "collection": "",
+      "description": "",
+      "dependencies": [
+        "08R73-MLC-D00",
+        "TRANSALP"
+      ],
+      "condition": null,
+      "action_lists": {
+        "0": "windscreen_s_std_standard",
+        "1": "windscreen_w_acc_tall_08r73_mlc_d00"
+      }
+    },
+    "08HME-MLC-DEM": {
+      "type": "code",
+      "collection": "Accessory Package",
+      "description": "Demo Pack",
+      "dependencies": [],
+      "condition": null,
+      "action_lists": {
+        "on": {
+          "08V70-MLC-D00": "on",
+          "08L72-MKT-D00": "on",
+          "08L80-MKT-D00MC": "on",
+          "08P72-MLC-D00": "on",
+          "08L73-MKT-D00": "on",
+          "08P73-MLC-D00": "on",
+          "08L72-MLC-D00": "on",
+          "08P71-MLC-D00": "on",
+          "08F74-MLC-D00": "on",
+          "08R74-MLF-E00ZA": "on",
+          "08P70-MLC-D00ZA": "on",
+          "08P74-MLC-D00": "on",
+          "08R73-MLC-D00": "on",
+          "08P77-MLC-D00": "on",
+          "08P72-MKS-E00ZB": "on",
+          "08R70-MLC-D00": "on",
+          "08R72-MLC-D00": "on",
+          "08M70-MLC-D00": "on",
+          "08U70-MLC-D00": "on",
+          "08R71-MJP-G50": "on",
+          "08R79-MKS-E00": "on",
+          "08R74-MLC-D00ZB": "on",
+          "08T70-MLC-D00": "on",
+          "08L89-MKS-E00": "on",
+          "08U71-MKK-D00": "on",
+          "08F73-MLC-D00ZA": "on"
+        },
+        "off": {
+          "08V70-MLC-D00": "off",
+          "08P70-MLC-D00ZA": "off",
+          "08L80-MKT-D00MC": "off",
+          "08L72-MKT-D00": "off",
+          "08L72-MLC-D00": "off",
+          "08F74-MLC-D00": "off",
+          "08L73-MKT-D00": "off",
+          "08R74-MLF-E00ZA": "off",
+          "08P72-MLC-D00": "off",
+          "08P73-MLC-D00": "off",
+          "08R74-MLC-D00ZB": "off",
+          "08P74-MLC-D00": "off",
+          "08R73-MLC-D00": "off",
+          "08P77-MLC-D00": "off",
+          "08P72-MKS-E00ZB": "off",
+          "08R70-MLC-D00": "off",
+          "08R71-MJP-G50": "off",
+          "08R72-MLC-D00": "off",
+          "08M70-MLC-D00": "off",
+          "08P71-MLC-D00": "off",
+          "08U70-MLC-D00": "off",
+          "08R79-MKS-E00": "off",
+          "08T70-MLC-D00": "off",
+          "08L89-MKS-E00": "off",
+          "08U71-MKK-D00": "off",
+          "08F73-MLC-D00ZA": "off"
+        }
+      }
+    },
+    "08HME-MLC-URB": {
+      "type": "code",
+      "collection": "Accessory Package",
+      "description": "Urban Pack",
+      "dependencies": [],
+      "condition": null,
+      "action_lists": {
+        "on": {
+          "08L73-MKT-D00": "on",
+          "08R73-MLC-D00": "on",
+          "08R74-MLF-E00ZA": "on",
+          "08L70-MLC-D00ZA": "on",
+          "08M70-MLC-D00": "on"
+        },
+        "off": {
+          "08L73-MKT-D00": "off",
+          "08R74-MLF-E00ZA": "off",
+          "08L70-MLC-D00ZA": "off",
+          "08R73-MLC-D00": "off",
+          "08M70-MLC-D00": "off"
+        }
+      }
+    },
+    "08ESY-MLC-ENG": {
+      "type": "code",
+      "collection": "Kit",
+      "description": "Engine Guard Kit",
+      "dependencies": [],
+      "condition": null,
+      "action_lists": {
+        "on": {
+          "08P73-MLC-D00": "on",
+          "08P74-MLC-D00": "on"
+        },
+        "off": {
+          "08P73-MLC-D00": "off",
+          "08P74-MLC-D00": "off"
+        }
+      }
+    },
+    "08ESY-MLC-KNGZ": {
+      "type": "code",
+      "collection": "Kit",
+      "description": "Knuckle Guards Kit-thien",
+      "dependencies": [],
+      "condition": null,
+      "action_lists": {
+        "on": {
+          "08P77-MLC-D00": "on",
+          "08P72-MKS-E00ZB": "on"
+        },
+        "off": {
+          "08P77-MLC-D00": "on",
+          "08P72-MKS-E00ZB": "on"
+        }
+      }
+    },
+    "08ESY-MLC-PNAL": {
+      "type": "code",
+      "collection": "Kit",
+      "description": "Easy Pannier Kit",
+      "dependencies": [],
+      "condition": null,
+      "action_lists": {
+        "on": {
+          "08L72-MKT-D00": "on",
+          "08L80-MKT-D00MC": "on",
+          "08L72-MLC-D00": "on"
+        },
+        "off": {
+          "08L72-MKT-D00": "off",
+          "08L80-MKT-D00MC": "off",
+          "08L72-MLC-D00": "off"
+        }
+      }
+    },
+    "08ESY-MLC-TB50": {
+      "type": "code",
+      "collection": "Kit",
+      "description": "50L Top Box Kit",
+      "dependencies": [],
+      "condition": null,
+      "action_lists": {
+        "on": {
+          "08L73-MKT-D00": "on",
+          "08R74-MLF-E00ZA": "on",
+          "08L70-MLC-D00ZA": "on"
+        },
+        "off": {
+          "08L73-MKT-D00": "off",
+          "08R74-MLF-E00ZA": "off",
+          "08L70-MLC-D00ZA": "off"
+        }
+      }
+    },
+    "NH-196_TRICO": {
+      "type": "code",
+      "collection": "Body Paint",
+      "description": "",
+      "dependencies": [],
+      "condition": null,
+      "action_lists": {
+        "on": {
+          "switch_tankdecals": "1",
+          "t_paint_I": "_NH-196_M",
+          "t_paint_III": "_FabricRedBlueGloss_M",
+          "t_paint_II": "_NH196_GoldWheel_M",
+          "t_paint_VIII": "_BlackSemiGloss_M"
+        },
+        "off": {}
+      }
+    },
+    "switch_tankdecals": {
+      "type": "switcher",
+      "collection": "",
+      "description": "",
+      "dependencies": [
+        "NH-196_TRICO",
+        "NH-A86M",
+        "NH-C64M",
+        "TRANSALP"
+      ],
+      "condition": null,
+      "action_lists": {
+        "1": "tankdecals_s_std_standard",
+        "2": "tankdecals_s_acc_decals2"
+      }
+    },
+    "t_paint_I": {
+      "type": "look",
+      "collection": "",
+      "description": "",
+      "dependencies": [
+        "NH-196_TRICO",
+        "NH-A86M",
+        "NH-C64M"
+      ],
+      "condition": null,
+      "action_lists": {
+        "_NH-196_M": "",
+        "_NH-A86M_M": "",
+        "_NH-C64M_M": ""
+      }
+    },
+    "t_paint_III": {
+      "type": "look",
+      "collection": "",
+      "description": "",
+      "dependencies": [
+        "NH-196_TRICO",
+        "NH-A86M",
+        "NH-C64M"
+      ],
+      "condition": null,
+      "action_lists": {
+        "_FabricRedBlueGloss_M": "",
+        "_FabricBlackSyntheticVelvetDark_M": ""
+      }
+    },
+    "t_paint_II": {
+      "type": "look",
+      "collection": "",
+      "description": "",
+      "dependencies": [
+        "NH-196_TRICO",
+        "NH-A86M",
+        "NH-C64M"
+      ],
+      "condition": null,
+      "action_lists": {
+        "_NH196_GoldWheel_M": "",
+        "_AnodizedBlack_M": ""
+      }
+    },
+    "t_paint_VIII": {
+      "type": "look",
+      "collection": "",
+      "description": "",
+      "dependencies": [
+        "NH-196_TRICO",
+        "NH-A86M",
+        "NH-C64M"
+      ],
+      "condition": null,
+      "action_lists": {
+        "_BlackSemiGloss_M": "",
+        "_NH-C64M_M": ""
+      }
+    },
+    "switch_quickshifter": {
+      "type": "switcher",
+      "collection": "",
+      "description": "",
+      "dependencies": [
+        "08U70-MLC-D00",
+        "TRANSALP"
+      ],
+      "condition": null,
+      "action_lists": {
+        "0": "quickshifter_s_std_standard",
+        "1": "quickshifter_w_acc_advanced_08u70_mlc_d00"
+      }
+    },
+    "NH-A86M": {
+      "type": "code",
+      "collection": "Body Paint",
+      "description": "",
+      "dependencies": [],
+      "condition": null,
+      "action_lists": {
+        "on": {
+          "switch_tankdecals": "2",
+          "t_paint_I": "_NH-A86M_M",
+          "t_paint_VII": "_NH-A86M_M",
+          "t_paint_III": "_FabricBlackSyntheticVelvetDark_M",
+          "t_paint_II": "_AnodizedBlack_M",
+          "t_paint_VIII": "_NH-C64M_M",
+          "t_paint_VI": "_NH-C64M_M"
+        },
+        "off": {}
+      }
+    },
+    "t_paint_VII": {
+      "type": "look",
+      "collection": "",
+      "description": "",
+      "dependencies": [
+        "NH-A86M",
+        "NH-C64M"
+      ],
+      "condition": null,
+      "action_lists": {
+        "_NH-A86M_M": "",
+        "_NH-C64M_M": ""
+      }
+    },
+    "t_paint_VI": {
+      "type": "look",
+      "collection": "",
+      "description": "",
+      "dependencies": [
+        "NH-A86M",
+        "NH-C64M"
+      ],
+      "condition": null,
+      "action_lists": {
+        "_NH-C64M_M": "",
+        "_NH-A86M_M": ""
+      }
+    },
+    "NH-C64M": {
+      "type": "code",
+      "collection": "Body Paint",
+      "description": "",
+      "dependencies": [],
+      "condition": null,
+      "action_lists": {
+        "on": {
+          "switch_tankdecals": "2",
+          "t_paint_I": "_NH-C64M_M",
+          "t_paint_III": "_FabricBlackSyntheticVelvetDark_M",
+          "t_paint_II": "_AnodizedBlack_M",
+          "t_paint_VIII": "_BlackSemiGloss_M",
+          "t_paint_VI": "_NH-A86M_M",
+          "t_paint_VII": "_NH-C64M_M"
+        },
+        "off": {}
+      }
+    },
+    "switch_crashguard": {
+      "type": "switcher",
+      "collection": "",
+      "description": "",
+      "dependencies": [
+        "08P72-MLC-D00",
+        "08V70-MLC-D00",
+        "08P74-MLC-D00",
+        "TRANSALP"
+      ],
+      "condition": null,
+      "action_lists": {
+        "0": "-",
+        "1": "crashguard_w_acc_fairing_08p72_mlc_d00"
+      }
+    },
+    "switch_foglightattachment": {
+      "type": "switcher",
+      "collection": "",
+      "description": "",
+      "dependencies": [
+        "08P72-MLC-D00",
+        "08V70-MLC-D00",
+        "08P74-MLC-D00",
+        "TRANSALP"
+      ],
+      "condition": null,
+      "action_lists": {
+        "0": "-",
+        "1": "foglightattachment_w_acc_front_08v70_mlc_d00"
+      }
+    },
+    "switch_radiatorgrill": {
+      "type": "switcher",
+      "collection": "",
+      "description": "",
+      "dependencies": [
+        "08F74-MLC-D00",
+        "TRANSALP"
+      ],
+      "condition": null,
+      "action_lists": {
+        "0": "-",
+        "1": "radiatorgrill_w_acc_advanced_08f74_mlc_d00"
+      }
+    },
+    "switch_riderfootpegs": {
+      "type": "switcher",
+      "collection": "",
+      "description": "",
+      "dependencies": [
+        "08R79-MKS-E00",
+        "TRANSALP"
+      ],
+      "condition": null,
+      "action_lists": {
+        "0": "riderfootpegs_s_std_standard",
+        "1": "riderfootpegs_w_acc_rally_08r79_mks_e00"
+      }
+    },
+    "TRANSALP": {
+      "type": "code",
+      "collection": "Bike Variant",
+      "description": "Transalp",
+      "dependencies": [],
+      "condition": null,
+      "action_lists": {
+        "on": {
+          "switch_chaincover": "1",
+          "switch_handlebarends": "1",
+          "switch_topcasepanel": "0",
+          "_switch_materials": "0",
+          "switch_chargingport": "0",
+          "switch_pillionbackrestpad": "0",
+          "switch_handgrips": "0",
+          "switch_standcenter": "0",
+          "switch_engineguard": "0",
+          "switch_deflectorfront": "0",
+          "switch_base": "1",
+          "switch_blinkers": "1",
+          "switch_brakelever": "1",
+          "switch_engineparts": "1",
+          "switch_exhaust": "1",
+          "switch_deflectorfairing": "0",
+          "switch_knuckleguardextension": "0",
+          "switch_foglightattachment": "0",
+          "switch_crashguard": "0",
+          "switch_engineguardattachment": "0",
+          "switch_skidplate": "0",
+          "switch_saddle": "1",
+          "switch_gaugeshield": "0",
+          "switch_grabhandles": "1",
+          "switch_knuckleguard": "0",
+          "switch_licenseplate": "1",
+          "switch_mirrors": "1",
+          "switch_pillionfootpegs": "0",
+          "switch_quickshifter": "0",
+          "switch_radiatorgrill": "0",
+          "switch_rims": "1",
+          "switch_topcasemounting": "0",
+          "switch_riderfootpegs": "0",
+          "switch_rimstripes": "0",
+          "switch_sidecases": "0",
+          "switch_sidecasesmounting": "0",
+          "switch_stand": "1",
+          "switch_tankbag": "0",
+          "switch_tankdecals": "1",
+          "switch_tankpaddecals": "0",
+          "switch_tires": "1",
+          "switch_topcase": "0",
+          "switch_windscreen": "0",
+          "switch_sidecasespanels": "0"
+        },
+        "off": {
+          "switch_chargingport": "0",
+          "switch_handgrips": "0",
+          "switch_brakelever": "1",
+          "switch_pillionbackrestpad": "0",
+          "switch_knuckleguardextension": "0",
+          "switch_windscreen": "0",
+          "switch_base": "1",
+          "switch_tankpaddecals": "0",
+          "switch_blinkers": "1",
+          "switch_chaincover": "1",
+          "switch_standcenter": "0",
+          "switch_deflectorfront": "0",
+          "switch_grabhandles": "1",
+          "switch_engineguard": "0",
+          "switch_stand": "1",
+          "switch_engineparts": "1",
+          "switch_exhaust": "1",
+          "switch_deflectorfairing": "0",
+          "switch_foglightattachment": "0",
+          "switch_crashguard": "0",
+          "switch_engineguardattachment": "0",
+          "switch_pillionfootpegs": "0",
+          "switch_saddle": "0",
+          "switch_gaugeshield": "0",
+          "switch_handlebarends": "1",
+          "switch_knuckleguard": "0",
+          "switch_licenseplate": "1",
+          "switch_mirrors": "1",
+          "switch_quickshifter": "0",
+          "switch_radiatorgrill": "0",
+          "switch_riderfootpegs": "0",
+          "switch_rims": "1",
+          "switch_rimstripes": "0",
+          "switch_sidecases": "0",
+          "switch_sidecasesmounting": "0",
+          "switch_skidplate": "0",
+          "switch_sidecasespanels": "0",
+          "switch_tankbag": "0",
+          "switch_tires": "1",
+          "switch_tankdecals": "1",
+          "switch_topcase": "0",
+          "switch_topcasemounting": "0",
+          "switch_topcasepanel": "0"
+        }
+      }
+    },
+    "switch_chaincover": {
+      "type": "switcher",
+      "collection": "",
+      "description": "",
+      "dependencies": [
+        "TRANSALP"
+      ],
+      "condition": null,
+      "action_lists": {
+        "1": "chaincover_s_std_standard"
+      }
+    },
+    "switch_handlebarends": {
+      "type": "switcher",
+      "collection": "",
+      "description": "",
+      "dependencies": [
+        "TRANSALP"
+      ],
+      "condition": null,
+      "action_lists": {
+        "1": "handlebarends_s_std_standard"
+      }
+    },
+    "switch_chargingport": {
+      "type": "switcher",
+      "collection": "",
+      "description": "",
+      "dependencies": [
+        "08U71-MKK-D00",
+        "TRANSALP"
+      ],
+      "condition": null,
+      "action_lists": {
+        "0": "chargingport_s_std_plug",
+        "1": "chargingport_w_acc_12vusb_08u71_mkk_d00"
+      }
+    },
+    "switch_handgrips": {
+      "type": "switcher",
+      "collection": "",
+      "description": "",
+      "dependencies": [
+        "08T70-MLC-D00",
+        "TRANSALP"
+      ],
+      "condition": null,
+      "action_lists": {
+        "0": "handgrips_s_std_standard",
+        "1": "handgrips_w_acc_heated_08t70_mlc_d00"
+      }
+    },
+    "switch_deflectorfront": {
+      "type": "switcher",
+      "collection": "",
+      "description": "",
+      "dependencies": [
+        "08R72-MLC-D00",
+        "TRANSALP"
+      ],
+      "condition": null,
+      "action_lists": {
+        "0": "-",
+        "1": "deflectorfront_w_acc_windhshield_08r72_mlc_d00"
+      }
+    },
+    "switch_base": {
+      "type": "switcher",
+      "collection": "",
+      "description": "",
+      "dependencies": [
+        "TRANSALP"
+      ],
+      "condition": null,
+      "action_lists": {
+        "1": "base_s_std_basebike"
+      }
+    },
+    "switch_blinkers": {
+      "type": "switcher",
+      "collection": "",
+      "description": "",
+      "dependencies": [
+        "TRANSALP"
+      ],
+      "condition": null,
+      "action_lists": {
+        "1": "blinkers_s_std_standard"
+      }
+    },
+    "switch_brakelever": {
+      "type": "switcher",
+      "collection": "",
+      "description": "",
+      "dependencies": [
+        "TRANSALP"
+      ],
+      "condition": null,
+      "action_lists": {
+        "1": "brakelever_s_std_standard"
+      }
+    },
+    "switch_engineparts": {
+      "type": "switcher",
+      "collection": "",
+      "description": "",
+      "dependencies": [
+        "TRANSALP"
+      ],
+      "condition": null,
+      "action_lists": {
+        "1": "engineparts_s_std_standard"
+      }
+    },
+    "switch_exhaust": {
+      "type": "switcher",
+      "collection": "",
+      "description": "",
+      "dependencies": [
+        "TRANSALP"
+      ],
+      "condition": null,
+      "action_lists": {
+        "1": "exhaust_s_std_standard"
+      }
+    },
+    "switch_deflectorfairing": {
+      "type": "switcher",
+      "collection": "",
+      "description": "",
+      "dependencies": [
+        "08R70-MLC-D00",
+        "TRANSALP"
+      ],
+      "condition": null,
+      "action_lists": {
+        "0": "-",
+        "1": "deflectorfairing_w_acc_front_08r70_mlc_d00"
+      }
+    },
+    "switch_gaugeshield": {
+      "type": "switcher",
+      "collection": "",
+      "description": "",
+      "dependencies": [
+        "TRANSALP"
+      ],
+      "condition": null,
+      "action_lists": {
+        "0": "gaugeshield_s_std_standard"
+      }
+    },
+    "switch_grabhandles": {
+      "type": "switcher",
+      "collection": "",
+      "description": "",
+      "dependencies": [
+        "TRANSALP"
+      ],
+      "condition": null,
+      "action_lists": {
+        "1": "grabhandles_s_std_standard"
+      }
+    },
+    "switch_licenseplate": {
+      "type": "switcher",
+      "collection": "",
+      "description": "",
+      "dependencies": [
+        "TRANSALP"
+      ],
+      "condition": null,
+      "action_lists": {
+        "1": "licenseplate_s_std_standard"
+      }
+    },
+    "switch_mirrors": {
+      "type": "switcher",
+      "collection": "",
+      "description": "",
+      "dependencies": [
+        "TRANSALP"
+      ],
+      "condition": null,
+      "action_lists": {
+        "1": "mirrors_s_std_standard"
+      }
+    },
+    "switch_rims": {
+      "type": "switcher",
+      "collection": "",
+      "description": "",
+      "dependencies": [
+        "TRANSALP"
+      ],
+      "condition": null,
+      "action_lists": {
+        "1": "rims_s_std_standard"
+      }
+    },
+    "switch_stand": {
+      "type": "switcher",
+      "collection": "",
+      "description": "",
+      "dependencies": [
+        "TRANSALP"
+      ],
+      "condition": null,
+      "action_lists": {
+        "1": "stand_s_std_standard"
+      }
+    },
+    "switch_tires": {
+      "type": "switcher",
+      "collection": "",
+      "description": "",
+      "dependencies": [
+        "TRANSALP"
+      ],
+      "condition": null,
+      "action_lists": {
+        "1": "tires_s_std_standard"
+      }
+    },
+    "08P70-MLC-D00ZB": {
+      "type": "code",
+      "collection": "Accessory",
+      "description": "Tankpad Decals Black",
+      "dependencies": [],
+      "condition": null,
+      "action_lists": {
+        "on": {
+          "switch_tankpaddecals": "1",
+          "t_paint_V": "_NH-A86M-Black-Flakes_M"
+        },
+        "off": {
+          "switch_tankpaddecals": "0"
+        }
+      }
+    },
+    "08L80-MKT-D00A": {
+      "type": "code",
+      "collection": "Accessory",
+      "description": "Side Case Panels Aluminium",
+      "dependencies": [],
+      "condition": null,
+      "action_lists": {
+        "on": {
+          "switch_sidecasespanels": "2",
+          "switch_sidecases": "1",
+          "switch_sidecasesmounting": "1"
+        },
+        "off": {
+          "switch_sidecasespanels": "0",
+          "switch_sidecases": "0",
+          "switch_sidecasesmounting": "0"
+        }
+      }
+    },
+    "08P70-MLC-D00ZC": {
+      "type": "code",
+      "collection": "Accessory",
+      "description": "Tankpad Decals Grey",
+      "dependencies": [],
+      "condition": null,
+      "action_lists": {
+        "on": {
+          "switch_tankpaddecals": "1",
+          "t_paint_V": "_NHC34M_M"
+        },
+        "off": {
+          "switch_tankpaddecals": "0"
+        }
+      }
+    },
+    "08L83-MKT-D00": {
+      "type": "code",
+      "collection": "Accessory",
+      "description": "Aluminium Top Case Panel",
+      "dependencies": [],
+      "condition": null,
+      "action_lists": {
+        "on": {
+          "switch_topcasepanel": "1",
+          "switch_topcasemounting": "1",
+          "switch_topcase": "1"
+        },
+        "off": {
+          "switch_topcasepanel": "0",
+          "switch_topcase": "0",
+          "switch_topcasemounting": "0",
+          "switch_pillionbackrestpad": "0"
+        }
+      }
+    }
+  },
+  "mapping": [
+    {
+      "id": "TRANSALP",
+      "name": "TRANSALP",
+      "type": "default",
+      "cameraId": "default"
+    },
+    {
+      "id": "nh-a86m_matte_ballistic_black_metallic",
+      "name": "NH-A86M",
+      "type": "paint",
+      "cameraId": "paint"
+    },
+    {
+      "id": "nh-196",
+      "name": "NH-196_TRICO",
+      "type": "paint",
+      "cameraId": "paint"
+    },
+    {
+      "id": "nh-c64m_matte_iridium_grey_metallic",
+      "name": "NH-C64M",
+      "type": "paint",
+      "cameraId": "paint"
+    },
+    {
+      "id": "08U71-MKK-D00",
+      "layers": [
+        "chargingport_w_acc_12vusb_08u71_mkk_d00"
+      ],
+      "type": "part",
+      "annotation": "08U71-MKK-D00",
+      "cameraId": "cam-3"
+    },
+    {
+      "id": "08P72-MLC-D00",
+      "layers": [
+        "crashguard_w_acc_fairing_08p72_mlc_d00"
+      ],
+      "type": "part",
+      "annotation": "08P72-MLC-D00",
+      "cameraId": "cam-1"
+    },
+    {
+      "id": "08R70-MLC-D00",
+      "layers": [
+        "deflectorfairing_w_acc_front_08r70_mlc_d00"
+      ],
+      "type": "part",
+      "annotation": "08R70-MLC-D00",
+      "cameraId": "cam-2"
+    },
+    {
+      "id": "08R72-MLC-D00",
+      "layers": [
+        "deflectorfront_w_acc_windhshield_08r72_mlc_d00"
+      ],
+      "type": "part",
+      "annotation": "08R72-MLC-D00",
+      "cameraId": "cam-2"
+    },
+    {
+      "id": "08P73-MLC-D00",
+      "layers": [
+        "engineguard_w_acc_eng_08p73_mlc_d00"
+      ],
+      "type": "part",
+      "annotation": "08P73-MLC-D00",
+      "cameraId": "cam-1"
+    },
+    {
+      "id": "08P74-MLC-D00",
+      "layers": [
+        "engineguardattachment_w_acc_eng_08p74_mlc_d00"
+      ],
+      "type": "part",
+      "annotation": "08P74-MLC-D00",
+      "cameraId": "cam-12"
+    },
+    {
+      "id": "08V70-MLC-D00",
+      "layers": [
+        "foglightattachment_w_acc_front_08v70_mlc_d00"
+      ],
+      "type": "part",
+      "annotation": "08V70-MLC-D00",
+      "cameraId": "cam-1"
+    },
+    {
+      "id": "08T70-MLC-D00",
+      "layers": [
+        "handgrips_w_acc_heated_08t70_mlc_d00"
+      ],
+      "type": "part",
+      "annotation": "08T70-MLC-D00",
+      "cameraId": "cam-3"
+    },
+    {
+      "id": "08P77-MLC-D00",
+      "layers": [
+        "knuckleguard_w_acc_advanced_08p77_mlc_d00"
+      ],
+      "type": "part",
+      "annotation": "08P77-MLC-D00",
+      "cameraId": "cam-2"
+    },
+    {
+      "id": "08P72-MKS-E00ZB",
+      "layers": [
+        "knuckleguardextension_w_acc_advanced_08p72_mks_e00z"
+      ],
+      "type": "part",
+      "annotation": "08P72-MKS-E00ZB",
+      "cameraId": "cam-2"
+    },
+    {
+      "id": "08P72-MKS-E00ZC",
+      "layers": [
+        "knuckleguardextension_w_acc_advanced_08p72_mks_e00z"
+      ],
+      "type": "part",
+      "annotation": "08P72-MKS-E00ZB",
+      "cameraId": "cam-2"
+    },
+    {
+      "id": "08R74-MLF-E00ZA",
+      "layers": [
+        "pillionbackrestpad_w_acc_sportcaseattache_08r74_mlf_e00za"
+      ],
+      "type": "part",
+      "annotation": "08R74-MLF-E00ZA",
+      "cameraId": "cam-11"
+    },
+    {
+      "id": "08R71-MJP-G50",
+      "layers": [
+        "pillionfootpegs_w_acc_comfort_08r71_mjp_g50"
+      ],
+      "type": "part",
+      "annotation": "08R71-MJP-G50",
+      "cameraId": "cam-7"
+    },
+    {
+      "id": "08U70-MLC-D00",
+      "layers": [
+        "quickshifter_w_acc_advanced_08u70_mlc_d00"
+      ],
+      "type": "part",
+      "annotation": "08U70-MLC-D00",
+      "cameraId": "cam-10"
+    },
+    {
+      "id": "08F74-MLC-D00",
+      "layers": [
+        "radiatorgrill_w_acc_advanced_08f74_mlc_d00"
+      ],
+      "type": "part",
+      "annotation": "08F74-MLC-D00",
+      "cameraId": "cam-1"
+    },
+    {
+      "id": "08R79-MKS-E00",
+      "layers": [
+        "riderfootpegs_w_acc_rally_08r79_mks_e00"
+      ],
+      "type": "part",
+      "annotation": "08R79-MKS-E00",
+      "cameraId": "cam-5"
+    },
+    {
+      "id": "08F73-MLC-D00ZA",
+      "layers": [
+        "rimstripes_w_acc_white_08f73_mlc_d00za"
+      ],
+      "type": "part",
+      "annotation": "08F73-MLC-D00ZA",
+      "cameraId": "default"
+    },
+    {
+      "id": "08F73-MLC-D00ZB",
+      "layers": [
+        "rimstripes_w_acc_gray_08f73_mlc_d00zb"
+      ],
+      "type": "part",
+      "annotation": "08F73-MLC-D00ZB",
+      "cameraId": "default"
+    },
+    {
+      "id": "08R74-MLC-D00ZB",
+      "layers": [
+        "saddle_w_acc_20mmlow_08r74_mlc_d00zb"
+      ],
+      "type": "part",
+      "annotation": "08R74-MLC-D00ZB",
+      "cameraId": "cam-4"
+    },
+    {
+      "id": "08L72-MKT-D00",
+      "layers": [
+        "sidecases_w_acc_aluminium_08l72_mkt_d00"
+      ],
+      "type": "part",
+      "annotation": "08L72-MKT-D00",
+      "cameraId": "cam-4"
+    },
+    {
+      "id": "08L72-MLC-D00",
+      "layers": [
+        "sidecasesmounting_w_acc_pannierstay_08l72_mlc_d00"
+      ],
+      "type": "part",
+      "annotation": "08L72-MLC-D00",
+      "cameraId": "cam-4"
+    },
+    {
+      "id": "08L80-MKT-D00MC",
+      "layers": [
+        "sidecasespanels_w_acc_multicolour_08l80_mkt_d00"
+      ],
+      "type": "part",
+      "annotation": "08L80-MKT-D00MC",
+      "cameraId": "cam-4"
+    },
+    {
+      "id": "08L80-MKT-D00",
+      "name": "08L80-MKT-D00A",
+      "layers": [
+        "sidecasespanels_w_acc_aluminium_08l80_mkt_d00"
+      ],
+      "type": "part",
+      "annotation": "08L80-MKT-D00A",
+      "cameraId": "cam-4"
+    },
+    {
+      "id": "08P71-MLC-D00",
+      "layers": [
+        "skidplate_w_acc_aluminium_08p71_mlc_d00"
+      ],
+      "type": "part",
+      "annotation": "08P71-MLC-D00",
+      "cameraId": "cam-1"
+    },
+    {
+      "id": "08M70-MLC-D00",
+      "layers": [
+        "standcenter_w_acc_main_08m70_mlc_d00"
+      ],
+      "type": "part",
+      "annotation": "08M70-MLC-D00",
+      "cameraId": "cam-8"
+    },
+    {
+      "id": "08L89-MKS-E00",
+      "layers": [
+        "tankbag_w_acc_3lmagnetic_08l89_mks_e00"
+      ],
+      "type": "part",
+      "annotation": "08L89-MKS-E00",
+      "cameraId": "cam-6"
+    },
+    {
+      "id": "08P70-MLC-D00ZA",
+      "layers": [
+        "tankpaddecals_w_acc_sticker_08p70_mlc_d00z"
+      ],
+      "type": "part",
+      "annotation": "08P70-MLC-D00ZA",
+      "cameraId": "cam-9"
+    },
+    {
+      "id": "08P70-MLC-D00ZB",
+      "layers": [
+        "tankpaddecals_w_acc_sticker_08p70_mlc_d00z"
+      ],
+      "type": "part",
+      "annotation": "08P70-MLC-D00ZA",
+      "cameraId": "cam-9"
+    },
+    {
+      "id": "08P70-MLC-D00ZC",
+      "layers": [
+        "tankpaddecals_w_acc_sticker_08p70_mlc_d00z"
+      ],
+      "type": "part",
+      "annotation": "08P70-MLC-D00ZA",
+      "cameraId": "cam-9"
+    },
+    {
+      "id": "08L73-MKT-D00",
+      "layers": [
+        "topcase_w_acc_50lsportcase_08l73_mkt_d00"
+      ],
+      "type": "part",
+      "annotation": "08L73-MKT-D00",
+      "cameraId": "cam-11"
+    },
+    {
+      "id": "08L70-MLC-D00ZA",
+      "layers": [
+        "topcasemounting_w_acc_casestay_08l70_mlc_d00za"
+      ],
+      "type": "part",
+      "annotation": "08L70-MLC-D00ZA",
+      "cameraId": "cam-11"
+    },
+    {
+      "id": "08L83-MKT-D00",
+      "layers": [
+        "topcasepanel_w_acc_aluminium_08l83_mkt_d00"
+      ],
+      "type": "part",
+      "annotation": "08L83-MKT-D00",
+      "cameraId": "cam-11"
+    },
+    {
+      "id": "08R73-MLC-D00",
+      "layers": [
+        "windscreen_w_acc_tall_08r73_mlc_d00"
+      ],
+      "type": "part",
+      "annotation": "08R73-MLC-D00",
+      "cameraId": "cam-2"
+    },
+    {
+      "id": "08HME-MLC-COM",
+      "type": "part",
+      "annotation": "",
+      "cameraId": "default"
+    },
+    {
+      "id": "08P74-MLC-D00",
+      "type": "part",
+      "annotation": "",
+      "cameraId": "cam-12"
+    },
+    {
+      "id": "08HME-MLC-ADV",
+      "type": "part",
+      "annotation": "",
+      "cameraId": "default"
+    },
+    {
+      "id": "08HME-MLC-RALZB",
+      "type": "part",
+      "annotation": "",
+      "cameraId": "default"
+    },
+    {
+      "id": "08HME-MLC-RALZC",
+      "type": "part",
+      "annotation": "",
+      "cameraId": "default"
+    },
+    {
+      "id": "08HME-MLC-TOU",
+      "type": "part",
+      "annotation": "",
+      "cameraId": "default"
+    },
+    {
+      "id": "08HME-MLC-DEMGR",
+      "type": "part",
+      "annotation": "",
+      "cameraId": "default"
+    },
+    {
+      "id": "08HME-MLC-DEMBL",
+      "type": "part",
+      "annotation": "",
+      "cameraId": "default"
+    },
+    {
+      "id": "08HME-MLC-URB",
+      "type": "part",
+      "annotation": "",
+      "cameraId": "default"
+    },
+    {
+      "id": "08HME-MLC-PSUK",
+      "type": "part",
+      "annotation": "",
+      "cameraId": "default"
+    }
+  ],
+  "cameras": [
+    {
+      "id": "default",
+      "constraintsId": "default",
+      "position": [
+        -2.4070340774148233,
+        -1.446097707857005,
+        0.7565665595785964
+      ],
+      "target": [
+        0.08070997163950387,
+        0.20988360879576182,
+        0.5964411660260114
+      ]
+    },
+    {
+      "id": "paint",
+      "constraintsId": "default",
+      "position": [
+        -3.08888825162509,
+        -0.013102106130121865,
+        0.6985317914222011
+      ],
+      "target": [
+        0,
+        0,
+        0.61
+      ]
+    },
+    {
+      "id": "riderview",
+      "constraintsId": "riderview",
+      "position": [
+        0.0016344330497191986,
+        0.696470762845794,
+        1.4520445816593455
+      ],
+      "target": [
+        -0.004186992705871393,
+        -0.2731002860282363,
+        1.205448557589799
+      ]
+    },
+    {
+      "position": [
+        -1.3861436712780333,
+        -1.2162927843755633,
+        0.49907158871164614
+      ],
+      "target": [
+        0.30104898770082944,
+        -0.3475861686047654,
+        0.4611548643197605
+      ],
+      "id": "cam-1",
+      "constraintsId": "cam-1"
+    },
+    {
+      "position": [
+        -1.134235012785102,
+        -0.6405373876152834,
+        1.652000402185518
+      ],
+      "target": [
+        0.03369581644722428,
+        -0.2997215396270017,
+        1.0269235445835094
+      ],
+      "id": "cam-2",
+      "constraintsId": "cam-2"
+    },
+    {
+      "position": [
+        -0.14718557610789537,
+        0.3760943566570407,
+        1.8445775533162925
+      ],
+      "target": [
+        0.0367477808830246,
+        -0.568107887059271,
+        0.6540617952649793
+      ],
+      "id": "cam-3",
+      "constraintsId": "cam-3"
+    },
+    {
+      "position": [
+        -1.3725334330788475,
+        0.07087360651427077,
+        1.2220250507039545
+      ],
+      "target": [
+        0.021166808224268942,
+        0.6307431145015823,
+        0.7461288053477274
+      ],
+      "id": "cam-4",
+      "constraintsId": "cam-4"
+    },
+    {
+      "position": [
+        -0.5983270334459396,
+        -0.31480890205028955,
+        0.7547951208999406
+      ],
+      "target": [
+        -0.08486031592584288,
+        0.32519873600561067,
+        0.22017036374493196
+      ],
+      "id": "cam-5",
+      "constraintsId": "cam-5"
+    },
+    {
+      "position": [
+        -0.28804658277044093,
+        0.24320356084573685,
+        1.5754055936718514
+      ],
+      "target": [
+        -0.00648068007598101,
+        -0.09198630300611897,
+        1.1579445364017729
+      ],
+      "id": "cam-6",
+      "constraintsId": "cam-6"
+    },
+    {
+      "position": [
+        -0.9427012782104859,
+        0.07269810728775838,
+        0.7247776373513731
+      ],
+      "target": [
+        0.0054937294615185995,
+        0.4769581251731843,
+        0.5531998258432187
+      ],
+      "id": "cam-7",
+      "constraintsId": "cam-7"
+    },
+    {
+      "position": [
+        0.8179389286117817,
+        0.5209078411670353,
+        0.5453363951089345
+      ],
+      "target": [
+        -0.08486031592584288,
+        0.32519873600561067,
+        0.22017036374493196
+      ],
+      "id": "cam-8",
+      "constraintsId": "cam-8"
+    },
+    {
+      "position": [
+        -0.9867464325765398,
+        0.5946564630206401,
+        1.0072666782049227
+      ],
+      "target": [
+        -0.06465592276481347,
+        0.046193650784248454,
+        0.8556406636030687
+      ],
+      "id": "cam-9",
+      "constraintsId": "cam-9"
+    },
+    {
+      "position": [
+        0.6098369874652587,
+        -0.286793000713688,
+        0.453392802804104
+      ],
+      "target": [
+        0.17296488666553061,
+        0.09501079953316804,
+        0.45935260944277323
+      ],
+      "id": "cam-10",
+      "constraintsId": "cam-10"
+    },
+    {
+      "position": [
+        -0.8840729789491483,
+        0.3259857063571937,
+        1.5431419863960982
+      ],
+      "target": [
+        -0.0645253916551182,
+        0.9560673332652578,
+        1.1534000841411212
+      ],
+      "id": "cam-11",
+      "constraintsId": "cam-11"
+    },
+    {
+      "position": [
+        -1.0319914814902373,
+        0.08772444750715644,
+        0.7234315147942474
+      ],
+      "target": [
+        -0.026250421363722704,
+        -0.2382706423671643,
+        0.5992161847111817
+      ],
+      "id": "cam-12",
+      "constraintsId": "cam-12"
+    }
+  ],
+  "constraints": [
+    {
+      "enabled": true,
+      "id": "default",
+      "ignoreGlobalConstraints": false,
+      "up": 80,
+      "down": 5,
+      "left": 0,
+      "right": 0,
+      "zoomIn": 1,
+      "zoomOut": 3,
+      "useCameraConstraints": true,
+      "usePanConstraints": true,
+      "usePitchConstraints": true,
+      "useYawConstraints": false,
+      "useZoomConstraints": true
+    },
+    {
+      "enabled": true,
+      "id": "riderview",
+      "ignoreGlobalConstraints": false,
+      "up": 20,
+      "down": 10,
+      "left": 0,
+      "right": 0,
+      "zoomIn": 0.5,
+      "zoomOut": 0.5,
+      "useCameraConstraints": true,
+      "usePanConstraints": true,
+      "usePitchConstraints": true,
+      "useYawConstraints": true,
+      "useZoomConstraints": true
+    },
+    {
+      "enabled": true,
+      "id": "part",
+      "ignoreGlobalConstraints": false,
+      "up": 80,
+      "down": 0,
+      "left": 0,
+      "right": 0,
+      "zoomIn": 1,
+      "zoomOut": 3,
+      "useCameraConstraints": true,
+      "usePanConstraints": true,
+      "usePitchConstraints": true,
+      "useYawConstraints": false,
+      "useZoomConstraints": true
+    },
+    {
+      "enabled": true,
+      "id": "cam-1",
+      "ignoreGlobalConstraints": false,
+      "up": 80,
+      "down": 0,
+      "left": 45,
+      "right": 180,
+      "zoomIn": 0.75,
+      "zoomOut": 0.5,
+      "useCameraConstraints": true,
+      "usePanConstraints": true,
+      "usePitchConstraints": true,
+      "useYawConstraints": true,
+      "useZoomConstraints": true
+    },
+    {
+      "enabled": true,
+      "id": "cam-2",
+      "ignoreGlobalConstraints": false,
+      "up": 80,
+      "down": 15,
+      "left": 45,
+      "right": 200,
+      "zoomIn": 0.5,
+      "zoomOut": 0.5,
+      "useCameraConstraints": true,
+      "usePanConstraints": true,
+      "usePitchConstraints": true,
+      "useYawConstraints": true,
+      "useZoomConstraints": true
+    },
+    {
+      "enabled": true,
+      "id": "cam-3",
+      "ignoreGlobalConstraints": false,
+      "up": 30,
+      "down": 30,
+      "left": 40,
+      "right": 10,
+      "zoomIn": 0.5,
+      "zoomOut": 0.5,
+      "useCameraConstraints": true,
+      "usePanConstraints": true,
+      "usePitchConstraints": true,
+      "useYawConstraints": true,
+      "useZoomConstraints": true
+    },
+    {
+      "enabled": true,
+      "id": "cam-4",
+      "ignoreGlobalConstraints": false,
+      "up": 80,
+      "down": 15,
+      "left": 250,
+      "right": 20,
+      "zoomIn": 0,
+      "zoomOut": 1,
+      "useCameraConstraints": true,
+      "usePanConstraints": true,
+      "usePitchConstraints": true,
+      "useYawConstraints": true,
+      "useZoomConstraints": true
+    },
+    {
+      "enabled": true,
+      "id": "cam-5",
+      "ignoreGlobalConstraints": false,
+      "up": 30,
+      "down": 15,
+      "left": 30,
+      "right": 15,
+      "zoomIn": 0,
+      "zoomOut": 1,
+      "useCameraConstraints": true,
+      "usePanConstraints": true,
+      "usePitchConstraints": true,
+      "useYawConstraints": true,
+      "useZoomConstraints": true
+    },
+    {
+      "enabled": true,
+      "id": "cam-6",
+      "ignoreGlobalConstraints": false,
+      "up": 30,
+      "down": 30,
+      "left": 100,
+      "right": 25,
+      "zoomIn": 0,
+      "zoomOut": 0.5,
+      "useCameraConstraints": true,
+      "usePanConstraints": true,
+      "usePitchConstraints": true,
+      "useYawConstraints": true,
+      "useZoomConstraints": true
+    },
+    {
+      "enabled": true,
+      "id": "cam-7",
+      "ignoreGlobalConstraints": false,
+      "up": 15,
+      "down": 15,
+      "left": 250,
+      "right": 25,
+      "zoomIn": 0,
+      "zoomOut": 0.5,
+      "useCameraConstraints": true,
+      "usePanConstraints": true,
+      "usePitchConstraints": true,
+      "useYawConstraints": true,
+      "useZoomConstraints": true
+    },
+    {
+      "enabled": true,
+      "id": "cam-8",
+      "ignoreGlobalConstraints": false,
+      "up": 15,
+      "down": 15,
+      "left": 40,
+      "right": 30,
+      "zoomIn": 0.5,
+      "zoomOut": 0.5,
+      "useCameraConstraints": true,
+      "usePanConstraints": true,
+      "usePitchConstraints": true,
+      "useYawConstraints": true,
+      "useZoomConstraints": true
+    },
+    {
+      "enabled": true,
+      "id": "cam-9",
+      "ignoreGlobalConstraints": false,
+      "up": 15,
+      "down": 15,
+      "left": 30,
+      "right": 60,
+      "zoomIn": 0.5,
+      "zoomOut": 0,
+      "useCameraConstraints": true,
+      "usePanConstraints": true,
+      "usePitchConstraints": true,
+      "useYawConstraints": true,
+      "useZoomConstraints": true
+    },
+    {
+      "enabled": true,
+      "id": "cam-10",
+      "ignoreGlobalConstraints": false,
+      "up": 30,
+      "down": 15,
+      "left": 15,
+      "right": 45,
+      "zoomIn": 0.5,
+      "zoomOut": 0.5,
+      "useCameraConstraints": true,
+      "usePanConstraints": true,
+      "usePitchConstraints": true,
+      "useYawConstraints": true,
+      "useZoomConstraints": true
+    },
+    {
+      "enabled": true,
+      "id": "cam-11",
+      "ignoreGlobalConstraints": false,
+      "up": 80,
+      "down": 15,
+      "left": 250,
+      "right": 20,
+      "zoomIn": 0,
+      "zoomOut": 1,
+      "useCameraConstraints": true,
+      "usePanConstraints": true,
+      "usePitchConstraints": true,
+      "useYawConstraints": true,
+      "useZoomConstraints": true
+    },
+    {
+      "enabled": true,
+      "id": "cam-12",
+      "ignoreGlobalConstraints": false,
+      "up": 80,
+      "down": 0,
+      "left": 45,
+      "right": 180,
+      "zoomIn": 0.75,
+      "zoomOut": 0.5,
+      "useCameraConstraints": true,
+      "usePanConstraints": true,
+      "usePitchConstraints": true,
+      "useYawConstraints": true,
+      "useZoomConstraints": true
+    }
+  ],
+  "objectsOfInterest": [
+    {
+      "name": "RootNode"
+    }
+  ]
+}

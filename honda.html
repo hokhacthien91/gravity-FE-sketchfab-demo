@@ -5,19 +5,95 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Honda | Sketchfab Viewer API example</title>
-
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   <script type="text/javascript" src="https://static.sketchfab.com/api/sketchfab-viewer-1.12.1.js"></script>
   <link rel="stylesheet" href="style.css">
+  <style>
+    #accessoryPacks li {
+      display: inline-block;
+      width: 13%;
+      vertical-align: top;
+    }
+
+    #accessoryPacks .item ul {
+      display: none;
+    }
+
+    #accessoryPacks .item.active ul {
+      display: block;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    .control-tab.active,
+    .control-node.added {
+      background-color: #000;
+      color: #fff;
+    }
+
+    .control-color {
+      height: 5rem;
+      width: 5rem;
+      border-radius: 50% !important;
+      display: inline-block;
+      position: static;
+    }
+
+    .control-color span {
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      text-align: center;
+      display: none;
+    }
+
+    .control-color.active {
+      border: 1px solid red;
+    }
+
+    .control-color.active span {
+      display: block;
+    }
+
+    #accessoryPacks2 {
+      padding: 30px 0;
+      /* display: inline-block; */
+      position: relative;
+      /* width: auto; */
+      text-align: center;
+    }
+  </style>
 </head>
 
 <body>
+  <div id="accessoryPacks"></div>
   <!-- Insert an empty iframe with attrubutes, hidden by default using a class-->
-  <div class="py-5 min-height-90vh" style="min-height:90vh; background-color:#272425!important;">
+  <div class="py-1 min-height-90vh" style="min-height:90vh; background-color:#272425!important;">
     <div class="container">
-      <img src="_DSC4201.jpg" width="200" alt="">
-      <br>
+
       <div class="row ">
-        <div class="d-flex flex-column col-md-8 mb-3">
+        <div class="d-flex flex-column col-md-12 mb-3">
+          <div>
+            <h3 style="color: white;">Loading</h3>
+            <div class="progress-wrap">
+              <div class="progress-bar" id="pb-mesh"></div>
+            </div>
+            <div class="progress-wrap">
+              <div class="progress-bar" style="background-color: green;" id="pb-texture"></div>
+            </div>
+          </div>
+          <div id="accessoryPacks2"></div>
+          <!-- ee51e48476cb43099a8ba3904601ef91 -->
+          <iframe id="api-frame" data-uid="ee51e48476cb43099a8ba3904601ef91" width="100%" height="auto"
+            allowfullscreen="" mozallowfullscreen="true" webkitallowfullscreen="true"
+            class="mb-3 rounded shadow-lg embed-responsive embed-responsive-4by3 border border-info"
+            loading="lazy"></iframe>
+          <br>
+          <img src="_DSC4201.jpg" width="200" alt="">
+          <br>
           <div id="controls" style="text-align: center;">
             <button id="a0">go to Annotation 0 </button>
             <button id="environment">Environment</button>
@@ -32,20 +108,8 @@
             <button id="rider">rider view</button>
             <button id="center">center</button>
           </div>
-          <div>
-            <h3 style="color: white;">Loading</h3>
-            <div class="progress-wrap">
-               <div class="progress-bar" id="pb-mesh"></div>
-            </div>
-            <div class="progress-wrap">
-               <div class="progress-bar" style="background-color: green;" id="pb-texture"></div>
-            </div>
-          </div>
-       <br>
-          <iframe id="api-frame" data-uid="16fb52a3094648b09b14770bdbacf3af" width="100%" height="auto" allowfullscreen="" mozallowfullscreen="true"
-            webkitallowfullscreen="true"
-            class="mb-3 rounded shadow-lg embed-responsive embed-responsive-4by3 border border-info"
-            loading="lazy"></iframe>
+
+          <br>
         </div>
         <div class="d-flex flex-column col-md-4 mx-auto">
           <div class="navTree" id="navTree">
@@ -53,16 +117,19 @@
         
         </div>
       </div>
-      <h2 style="color: white;">Textures</h2>
+      <!-- <h2 style="color: white;">Textures</h2>
       <ul id="data-textures" style="background-color: #fff;"></ul>
       <h2 style="color: white;">Materials</h2>
-      <ul id="data-list" style="background-color: #fff;"></ul>
-    
+      <ul id="data-list" style="background-color: #fff;"></ul> -->
+
     </div>
   </div>
   <!-- Initialize the viewer -->
 
   <script src="app.js"></script>
+  <script src="render-api.js"></script>
 </body>
 
 </html>
+<!-- https://sketchfab.com/3d-models/my23-cb750-masterscene-16fb52a3094648b09b14770bdbacf3af -->
+<!-- https://sketchfab.com/3d-models/my24-crf1100-l1l3-beff4d94d4654382a3701fa46daaa08e -->

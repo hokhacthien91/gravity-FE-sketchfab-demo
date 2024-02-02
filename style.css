@@ -104,7 +104,7 @@ ul,
 
 /* Show the nested list when the user clicks on the caret/arrow (with JavaScript) */
 .active {
-  display: block;
+  /* display: block; */
 }
 
 #api-frame {
@@ -656,7 +656,7 @@ legend {
 button {
   margin-left: 1.5rem;
   font-size: 0.875rem !important;
-  float: right;
+  /* float: right; */
 }
 @media (max-width: 1200px) {
   legend {
@@ -831,6 +831,9 @@ mark,
 .list-inline {
   padding-left: 0;
   list-style: none;
+}
+.hidden{
+  display: none;
 }
 .list-inline-item {
   display: inline-block;
