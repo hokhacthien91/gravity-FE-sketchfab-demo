@@ -83,11 +83,11 @@ var success = function (api) {
           m.channels.AlbedoPBR.texture = textures[m.name];
           // m.channels.AlbedoPBR.color = false;
 
-          api.updateTexture(url, m.channels.AlbedoPBR.texture.uid,
-          function(  ) {
-            api.setMaterial(m);
-          }
-          );
+          // api.updateTexture(url, m.channels.AlbedoPBR.texture.uid,
+          // function(  ) {
+          //   api.setMaterial(m);
+          // }
+          // );
         } else {
           // white
           console.log('Materials Update Item: ', m.name, ' - New texture: ' + NewTextureURL, newTextureUID);

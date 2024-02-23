@@ -1,6 +1,6 @@
 $(document).ready(function () {
   // Replace 'your-api-endpoint' with the actual API endpoint
-  var apiEndpoint = './xl750_transalp_2023/accessories.json';
+  var apiEndpoint = './xl750_transalp_2023/accessories.json?v=12';
 
   // Make API call using jQuery
   $.ajax({
@@ -266,7 +266,7 @@ $(document).ready(function () {
   }
 
 
-  var apiEndpoint2 = './xl750_transalp.json';
+  var apiEndpoint2 = './xl750_transalp.json?v=12';
 
   // Make API call using jQuery
   $.ajax({
