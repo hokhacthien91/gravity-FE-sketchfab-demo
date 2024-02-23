@@ -9,18 +9,48 @@
   <script type="text/javascript" src="https://static.sketchfab.com/api/sketchfab-viewer-1.12.1.js"></script>
   <link rel="stylesheet" href="style.css">
   <style>
+    #accessoryPacks .control-tab{
+      margin: 0 0 0 15px;
+    }
     #accessoryPacks li {
       display: inline-block;
       width: 13%;
+      max-width: 170px;
       vertical-align: top;
+      text-align: center;
     }
 
     #accessoryPacks .item ul {
       display: none;
+      padding-left: 15px;
     }
 
     #accessoryPacks .item.active ul {
       display: block;
+    }
+
+    #accessoryPacks h6 {
+      font-size: .85em !important;
+      margin: 0 !important;
+      text-transform: none;
+    }
+
+    #accessoryPacks p {
+      margin-bottom: 0;
+      text-transform: none;
+      font-size: .75em;
+      color: red;
+    }
+
+    #accessoryPacks li {
+      padding: 6px;
+    }
+
+    #accessoryPacks img {
+      object-fit: contain;
+      max-height: 60px;
+      display: block;
+      margin: 0 auto 5px;
     }
 
     img {
@@ -34,8 +64,9 @@
     }
 
     .control-color {
-      height: 5rem;
-      width: 5rem;
+      height: 2rem;
+      width: 2rem;
+      border: 2px solid transparent;
       border-radius: 50% !important;
       display: inline-block;
       position: static;
@@ -51,7 +82,7 @@
     }
 
     .control-color.active {
-      border: 1px solid red;
+      border: 2px solid red;
     }
 
     .control-color.active span {
@@ -61,9 +92,16 @@
     #accessoryPacks2 {
       padding: 30px 0;
       /* display: inline-block; */
-      position: relative;
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin: 10px auto;
       /* width: auto; */
       text-align: center;
+      z-index: 111;
+    }
+    .box-iframe{
+      position: relative;
     }
   </style>
 </head>
@@ -85,12 +123,14 @@
               <div class="progress-bar" style="background-color: green;" id="pb-texture"></div>
             </div>
           </div>
-          <div id="accessoryPacks2"></div>
-          <!-- ee51e48476cb43099a8ba3904601ef91 -->
-          <iframe id="api-frame" data-uid="ee51e48476cb43099a8ba3904601ef91" width="100%" height="auto"
-            allowfullscreen="" mozallowfullscreen="true" webkitallowfullscreen="true"
-            class="mb-3 rounded shadow-lg embed-responsive embed-responsive-4by3 border border-info"
-            loading="lazy"></iframe>
+          <div class="box-iframe">
+            <div id="accessoryPacks2"></div>
+            <!-- ee51e48476cb43099a8ba3904601ef91 -->
+            <iframe id="api-frame" data-uid="ee51e48476cb43099a8ba3904601ef91" width="100%" height="auto"
+              allowfullscreen="" mozallowfullscreen="true" webkitallowfullscreen="true"
+              class="mb-3 rounded shadow-lg embed-responsive embed-responsive-4by3 border border-info"
+              loading="lazy"></iframe>
+          </div>
           <br>
           <img src="_DSC4201.jpg" width="200" alt="">
           <br>
@@ -114,7 +154,7 @@
         <div class="d-flex flex-column col-md-4 mx-auto">
           <div class="navTree" id="navTree">
           </div>
-        
+
         </div>
       </div>
       <!-- <h2 style="color: white;">Textures</h2>

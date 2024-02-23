@@ -83,23 +83,23 @@ var success = function (api) {
           m.channels.AlbedoPBR.texture = textures[m.name];
           // m.channels.AlbedoPBR.color = false;
 
-          //api.updateTexture(url, m.channels.AlbedoPBR.texture.uid,
-          // function(  ) {
-          //   api.setMaterial(m);
-          //}
-          //);
+          api.updateTexture(url, m.channels.AlbedoPBR.texture.uid,
+          function(  ) {
+            api.setMaterial(m);
+          }
+          );
         } else {
-          m.channels.AlbedoPBR.texture = false;
-          // m.channels.AlbedoPBR.color = [1, 0, 0, 0];
-
+          // white
           console.log('Materials Update Item: ', m.name, ' - New texture: ' + NewTextureURL, newTextureUID);
-          m.channels.AlbedoPBR.texture = {
-            uid: newTextureUID,
-            // uid: "6263e4641a774731bc296be7efd1d576",
-          };
+            m.channels.AlbedoPBR.texture = {
+              uid: newTextureUID,
+              // uid: "6263e4641a774731bc296be7efd1d576",
+            };
+        
         }
       }
       api.setMaterial(m);
+      console.log('----------------------------------')
     }
   }
   api.start(function () {
@@ -418,15 +418,19 @@ var success = function (api) {
         });
       });
 
-
+//       window.globalApi.setMaterial(window.ma[6], function() {
+//         window.console.log('Material updated');
+// });
       api.getMaterialList(function (err, materials) {
         if (!err) {
           window.console.log('List materials:', materials);
+          window.ma = materials
+          console.log('materials 2222 win', window.ma[0]);
           myMaterials = materials;
           for (var i = 0; i < myMaterials.length; i++) {
             var m = myMaterials[i];
             textures[m.name] = m.channels.AlbedoPBR.texture;
-            console.log('Materials item: ', m.name, m);
+            // console.log('Materials item: ', m.name, m);
           }
           renderDataToDOM(materials);
         }

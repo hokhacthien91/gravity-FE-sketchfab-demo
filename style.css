@@ -170,6 +170,7 @@ ul.nested.active {
   color: #444 !important;
   text-transform: uppercase;
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+  display: block;
 }
 
 .controls {

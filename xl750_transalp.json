@@ -33,7 +33,9 @@
       "colours": [
         {
           "id": "nh-196",
-          "name": "Ross White 2",
+          "name": "Ross White",
+          "idPart": "NH-196_TRICO",
+          "color": "#fff",
           "swatch": "https://motorcycle-static.honda.eu/assets/xl750_transalp/colour_swatches/nh-196.png",
           "bikeThumb": "https://motorcycle-renderserver.honda.eu/image/xl750_transalp_2023/nh-196/default/default/0x0x10/default/192x108",
           "simpleImage": null,
@@ -46,6 +48,8 @@
         },
         {
           "id": "nh-a86m_matte_ballistic_black_metallic",
+          "idPart": "NH-A86M",
+          "color": "#000",
           "name": "Matte Ballistic Black Metallic",
           "swatch": "https://motorcycle-static.honda.eu/assets/xl750_transalp/colour_swatches/nh-a86m_matte_ballistic_black_metallic.png",
           "bikeThumb": "https://motorcycle-renderserver.honda.eu/image/xl750_transalp_2023/nh-a86m_matte_ballistic_black_metallic/default/default/0x0x10/default/192x108",
@@ -63,6 +67,8 @@
         },
         {
           "id": "nh-c64m_matte_iridium_grey_metallic",
+          "idPart": "NH-C64M",
+          "color": "#7a7a7a",
           "name": "Matte Iridium Grey Metallic",
           "swatch": "https://motorcycle-static.honda.eu/assets/xl750_transalp/colour_swatches/nh-c64m_matte_iridium_grey_metallic.png",
           "bikeThumb": "https://motorcycle-renderserver.honda.eu/image/xl750_transalp_2023/nh-c64m_matte_iridium_grey_metallic/default/default/0x0x10/default/192x108",

@@ -15,7 +15,7 @@
           "globalName": "ADVENTURE PACK",
           "description": "Enhance the Adventure appearance of the Honda Transalp and prepare it for any road condition by adding Adventure Pack which contains the following accessories:\r\n• Radiator Grill (08F74-MLC-D00)\r\n• Front Side Pipe (08P72-MLC-D00)\r\n• Front Fog Light (08V73-MKS-E00)\r\n• Front Fog Light Attachment (08V70-MLC-D00)\r\n\r\nThe Guard Attachment (08P74-MLC-D00) is required to install the pack.",
           "price": 755.00,
-          "mostPopular": false,
+          "mostPopular": true,
           "installationPrice": 78.0,
           "thumbnailUrl": "https://motorcycle-api.honda.eu/media/palma-accessory-images/08HMEMLCADV_23969_12376_A_24M.jpg",
           "defaultPartsToHide": [],
@@ -80,7 +80,7 @@
           "incompatibleVariants": [],
           "compatibleColours": [],
           "hideFromAccessoryList": false,
-          "isCustomisedPart": false
+          "isCustomisedPart": true
         },
         {
           "isFeatured": true,
